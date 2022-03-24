@@ -1,1 +1,0 @@
-outputtemplate := "%j-%c.mps";
