@@ -1,0 +1,28 @@
+title Producer-Consumer
+
+participant ContentServer_1 #99FF99
+participant ContentServer_2 #99FF99
+participant AggregationServer #22EE99
+participant ContentServer_3 #99FF99
+
+ContentServer_1 -> AggregationServer: HTTP PUT 1
+AggregationServer -> AggregationServer: Producer: put HTTP PUT 1 in the \nblocking priority queue
+AggregationServer -> AggregationServer: Consumer: get HTTP PUT 1 from the queue
+ContentServer_2 -> AggregationServer: HTTP PUT 2
+ContentServer_3 -> AggregationServer: HTTP PUT 3
+AggregationServer -> AggregationServer: Producer: Producer: enqueue HTTP PUT 2
+AggregationServer -> AggregationServer: Producer: Producer: enqueue HTTP PUT 3
+ContentServer_1 -> AggregationServer: HTTP PUT 4
+AggregationServer -> AggregationServer: Consumer: get HTTP PUT 2 from the queue
+AggregationServer -> AggregationServer: Consumer: get HTTP PUT 3 from the queue
+AggregationServer -> AggregationServer: Producer: Producer: enqueue HTTP PUT 4
+AggregationServer -> AggregationServer: Consumer: get HTTP PUT 4 from the queue
+
+legend
+1. Client1 GET request firstly
+2. Content_Server PUT request secondly
+3. Then Client2 GET request
+So, the order should use Lamport clock
+endlegend
+
+@enduml

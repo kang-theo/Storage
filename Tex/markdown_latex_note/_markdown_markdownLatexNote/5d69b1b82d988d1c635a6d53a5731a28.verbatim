@@ -1,0 +1,19 @@
+E ret = data[index];
+
+for(int i=index+1; i<size; i++){
+    data[i-1] = data[i]; 
+}
+size --; 
+data[size] = null; //loitering objects
+
+//Lazy 缩容，解决时间复杂度震荡问题
+//if(size == data.length/2){
+//这里有个 bug，缩容到最后 data.length 只剩下1时，data.length/2将会出现结果为0的情况
+//当 data.length 为4,size == 1时会进行缩容，缩减为容量为2；当size == 0, data.length 为3时，进行缩容，缩容到容量为1；
+//当 size == 0, data.length 为2时，也会触发下面代码，但是容量仍保持为1. 容量为1是缩容的最小容量了。
+//如果 data.length 为1，那么缩容到 data.length/2的话，就是缩容到0，resize中有 new 一个数组的操作，new 一个容量为0 的数组是不可以的。
+if(size == data.length/4 && data.length/2 != 0){
+    resize(data.length/2);           
+}
+
+return ret;

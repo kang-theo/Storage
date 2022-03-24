@@ -1,0 +1,85 @@
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.6.7)  19 JUN 2018 16:40
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**"example 1 - levels of structure.tex"
+(./example 1 - levels of structure.tex
+LaTeX2e <2018-04-01> patch level 2
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/bk10.clo
+File: bk10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@chapter=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\c@figure=\count87
+\c@table=\count88
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(./example 1 - levels of structure.aux)
+\openout1 = `"example 1 - levels of structure.aux"'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+ (./example 1 - levels of structure.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 3.
+)
+\tf@toc=\write3
+\openout3 = `"example 1 - levels of structure.toc"'.
+
+[1
+
+
+] [2
+
+] (./example 1 - levels of structure.lof)
+\tf@lof=\write4
+\openout4 = `"example 1 - levels of structure.lof"'.
+
+ [3] [4
+
+]
+(./example 1 - levels of structure.lot)
+\tf@lot=\write5
+\openout5 = `"example 1 - levels of structure.lot"'.
+
+ [5] [6
+
+] [7] [8]
+Chapter 1.
+[9
+
+] (./example 1 - levels of structure.aux) ) 
+Here is how much of TeX's memory you used:
+ 262 strings out of 492970
+ 3559 string characters out of 6133939
+ 64642 words of memory out of 5000000
+ 4331 multiletter control sequences out of 15000+600000
+ 3728 words of font info for 25 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 23i,4n,18p,141b,149s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on example 1 - levels of structure.xdv (9 pages, 9756 bytes).

@@ -1,0 +1,176 @@
+    private int[] data;
+    private int size;
+
+    //构造函数，传入数组的容量 capacity 构造 Array
+    public Array(int capacity){
+        data = new int[capacity];
+        size = 0;
+    }
+    //无参构造函数，有参构造函数定以后，无参构造函数不会自动生成；默认数组容量为 capacity=10
+    putlic Array(){
+        this(10);
+    }
+
+    //获取数组中的元素个数  
+    public int getSize(){
+        return size;
+    }
+
+    // 获取数组的容量
+    public int getCapacity(){
+        return data.length;
+    }
+
+    // 返回数组是否为空
+    public boolean isEmpty(){
+        return size == 0;
+    }
+
+    //向数组所有元素后添加一个新元素
+    public void addLast(int e){
+        //如果数组满了，不能添加新元素，抛出异常
+        if(size == data.length){
+            throw new IllegalArgumentException("Addlast failed. Array is full.");
+        }
+
+        data[size] = e;
+        size ++;
+    }
+    //有了下面这个在 index 位置添加元素的函数 add，那么上面 addLast 就可以复用add 这个函数了，下面给出重新实现：
+    public void addLast(int e){
+        //向最后一个位置添加元素就是向第 size 个位置添加元素，size 始终指向最后一个元素的后一个空位置，size-1始终是数组最后一个元素位置
+        add(size, e);
+    }
+
+    //同理，可以借助 add 实现 addFirst
+    public void addLast(int e){
+        //在开头添加就是在索引为0处添加
+        add(0, e);
+    }
+
+    //向第 index个位置添加一个新元素
+    public void add(int index, int e){
+        //如果数组满了，不能添加新元素，抛出异常
+        if(size == data.length){
+            throw new IllegalArgumentException("Add failed. Array is full.");
+        }
+        //1. 因为 size 初始值为0，指向数组第一个位置，与初始下标0一致，最后一个元素是arr[size - 1]， 即数组的第一个空位置是 size, 为了保证数组紧密存储，下一个元素必须添加在 size 位置上，否则， 见2
+        //2. 如果 index 取比 size大的值，说明数组中的元素将不会是紧密排列的，中间会有空置未用的位置
+        if(index < 0 ||  index > size){
+            throw new IllegalArgumentException("Add failed. Require index >= 0 and index <= size");
+        }   
+        //从最后一个位置的元素（size-1）开始，依次往后挪一个位置        
+        for(int i=size-1; i>=index; i--){
+        data[i+1] = data[i]; 
+        }
+
+        data[index] = e;
+        size ++;
+    } 
+
+    //获取 index索引位置的元素
+    int get(int index){
+        //保证了不在 size 范围内的元素不会被获取到，保护了数据的安全
+        if(index < 0 || index >= size){
+            throw new IllegalArgumentException("Get failed. Index is invalid.");   
+        }
+
+        return data[index];
+    }
+    //获取 index索引位置的元素
+    int set(int index, int e){
+        //保证了不在 size 范围内的元素不会被修改，保护了数据的安全
+        if(index < 0 || index >= size){
+            throw new IllegalArgumentException("Get failed. Index is invalid.");   
+        }
+
+        data[index] = e;
+    }
+
+    /*本节新增*/
+    //查找数组中是否有元素 e
+    public boolean contains(int e){
+        for(int i=0; i<size; i++){
+            if(data[i] == e){
+                return true;                
+            }   
+
+            return false;
+        }
+    }
+
+    /*本节新增*/
+    //查找数组中元素 e所在的索引，如果不存在元素 e,则返回-1
+    //这个函数存在一个问题，是只能找到一个元素 e，函数就返回了，可以设计一个函数 findAll来完成查找数组中所有 e 的功能
+    public int find(int e){
+        for(int i=0; i<size; i++){
+            if(data[i] == e){
+                return i;                
+            }   
+
+            //一般-1表示无效索引
+            return -1;
+        }
+    }
+
+    /*本节新增*/
+    //从数组中删除 index位置的元素，返回删除的值
+    public int remove(int index){
+        //仍然先进性索引有效性判断
+        if(index < 0 || index >= size){
+            throw new IllegalArgumentException("Remove failed. Index is invalid.");    
+        }
+
+        //将要删除的元素保留下来，作为函数返回值
+        int ret = data[index];
+
+        //从删除的位置后面一个元素开始依次往前挪
+        for(int i=index+1; i<size; i++){
+            data[i-1] = data[i]; //依次往前挪
+        }
+        size --; //删除一个元素，维护一下 size
+        return ret;
+    }
+
+    /*本节新增*/
+    //根据上面的删除某一个元素的方法 Remove,可以创建下面的方法：
+    //从数组中删除第一个元素
+    public int removeFirst(){
+        return remove(0);
+        //这里实际上应该判断数组是否为空，但是这里不需要，因为在 remove 函数中会进行这个判断
+    }
+
+    /*本节新增*/
+    //从数组中删除最后一个元素
+    public int removeLast(){
+        return remove(size - 1);
+    }
+
+    /*本节新增*/
+    //从数组中删除某个元素，不是删除指定索引的元素，这里不需要返回那个删除的值，因为参数就是那个值
+    //这个函数存在一个问题，是只能删除一个元素 e，函数就返回了，可以设计一个函数 removeAll来完成删除数组中所有 e 的功能
+    public void removeElement(int e){
+        //当然，可以遍历这个数组，一个一个元素进行比较，找到了就删除，然后返回，但是这里可以复用上面定义的方法
+        int index = find(e);
+        if(index != -1){
+            remove(index);
+        }
+    }
+
+    //格式化打印数组内容
+    #Override //如果下面方法名打错，编译器会给出提示，因为目的是覆盖父类的一个方法，而不是新增一个方法
+    public String toString(){
+        StringBuilder res = new StringBuilder();
+        res.append(String.format("Array: size = %d, capacity = %d\n", size, data.length));
+        res.append('[');
+        for(int i=0; i<size; i++){
+            res.append(data[i]);
+            //如果不是最后一个元素（最后一个元素位置为 size-1）
+            if(i != size -1){
+                res.append(", ");
+            }
+        }
+
+        res.append(']');
+        return res.toString();
+    }  

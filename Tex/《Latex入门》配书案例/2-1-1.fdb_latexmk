@@ -1,0 +1,14 @@
+# Fdb version 3
+["xdvipdfmx"] 0 "2-1-1.xdv" "2-1-1.pdf" "2-1-1" 0
+  "2-1-1.xdv" 0 -1 0 "xelatex"
+  (generated)
+  "2-1-1.pdf"
+["xelatex"] 1529759411 "2-1-1.tex" "2-1-1.xdv" "2-1-1" 1529759412
+  "/usr/local/texlive/2018/texmf-dist/web2c/texmf.cnf" 1522066949 33362 cf75436e19743e94a92a6b1b9183c434 ""
+  "/usr/local/texlive/2018/texmf-var/web2c/xetex/xelatex.fmt" 1528378686 3731935 cfe3f92c3797d4d4c404d6eedfee8b4b ""
+  "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
+  "2-1-1.aux" 1529759411 8 a94a2480d3289e625eea47cd1b285758 ""
+  "2-1-1.tex" 1355292404 95 037bdf76f28b0c46cfc5dac1227d7a6b ""
+  (generated)
+  "2-1-1.xdv"
+  "2-1-1.log"

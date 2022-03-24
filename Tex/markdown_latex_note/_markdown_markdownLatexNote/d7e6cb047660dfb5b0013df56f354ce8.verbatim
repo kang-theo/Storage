@@ -1,0 +1,26 @@
+public static void main(String[] args)
+
+//这里要告诉定义的 Array 数组类具体是什么类型，告诉泛型到底使用的是哪种类型,这里不能使用 Array<int>，因为基本数据类型不支持泛型，所以要使用该 int 类型对应的包装类 Integer.
+Array< Integer> arr = new Array<>(20);
+for(int i=0; i<10; i++){
+    arr.addLast(i);
+}
+
+System.out.println(arr);
+
+//在上面修改 add 函数时，第二个参数从 int e 修改为 E e 了，这里传入100为什么没问题呢？ 因为，E 在具体使用的 main函数中式指定的 Integer 类，它能和其对应的基本数据类型进行自动转换，所以这里100是个 int 类型，所以可以兼容上面指定的 Integer 类型
+arr.add(1, 100);
+System.out.println(arr);
+
+arr.addFirst(-1);
+System.out.println(arr);
+
+/*本节新增*/
+arr.remove(2);
+System.out.println(arr);
+
+arr.removeElement(4);
+System.out.println(arr);
+
+arr.removeFirst();
+System.out.println(arr);

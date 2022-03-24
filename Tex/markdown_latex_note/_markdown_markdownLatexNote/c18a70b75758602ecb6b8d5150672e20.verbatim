@@ -1,0 +1,78 @@
+private E[] data;
+private int size;
+
+public Array(int capacity){
+    //data = new E[capacity]; //Java 不支持直接 new 一个泛型数组,通过下面的超级类 Object来进行转换
+    data = new （E[]）Object[capacity]; //先 new 一个 Object 类数组，在进行强制类型转换成泛型数组
+    size = 0;
+}
+
+public void add(int index, E e){
+
+    if(size == data.length){
+        throw new IllegalArgumentException("Add failed. Array is full.");
+    }
+
+    if(index < 0 ||  index > size){
+        throw new IllegalArgumentException("Add failed. Require index >= 0 and index <= size");
+    }   
+
+    for(int i=size-1; i>=index; i--){
+    data[i+1] = data[i]; 
+    }
+
+    data[index] = e;
+    size ++;
+    } 
+
+int get(int index){
+
+    if(index < 0 || index >= size){
+        throw new IllegalArgumentException("Get failed. Index is invalid.");   
+    }
+
+    return data[index];
+}
+
+int set(int index, E e){
+
+    if(index < 0 || index >= size){
+        throw new IllegalArgumentException("Get failed. Index is invalid.");   
+    }
+
+    data[index] = e;
+}
+
+public boolean contains(int e){
+    for(int i=0; i<size; i++){
+        //因为修改成泛型后，这里不再是值的比较了，而是对象，所以要修改成 equals 方法进行比较
+        //if(data[i] == e) //值比较
+
+    //引用比较
+    if(data[i].equals(e)){
+        return true;                
+    }   
+
+        return false;
+    }
+}
+
+public E remove(int index){
+
+    if(index < 0 || index >= size){
+        throw new IllegalArgumentException("Remove failed. Index is invalid.");    
+    }
+
+    E ret = data[index];
+
+    for(int i=index+1; i<size; i++){
+        data[i-1] = data[i]; 
+    }
+    //data 数组使用泛型之前存储的都是 int数据，删除一个元素后，后面的依次往前挪，size--之后，虽然最后一个元素前挪后仍然存在，但是因为 size--了，所以是访问不到的，留着也没什么问题。
+    //现在改成泛型后，data 数组中存放的都是类对象的引用，删除一个元素后，最后一个元素即 data[size]还指着一个类对象的引用，此时 Java 的垃圾回收机制是不会清理这个对象，因为 data[size]这个引用仍然指向了那个对象，说明那个对象还在使用。
+    //如果愿意的话，可以加下面一句，断开这个引用和对象的关系，这样就会被回收机制清理内存了
+    size --; 
+    //下面这个也不是必须的，因为如果再存入一个元素，那么data[size]所指向的对象就换成了新的，原来的就没引用指向它了，这样就会被清理了。这种未使用但是有引用指向它，所以不会被清理内存，但是它会被后续数组的使用被停止原来对象的引用，从而清理掉这个对象的内存，这种类对象叫做 loitering objects，它与内存泄露不是一回事，做的更好的话，可以加上下面这句手动截断引用.
+    data[size] = null; //loitering objects(闲散、游荡的) != memmory leak
+    return ret;
+}

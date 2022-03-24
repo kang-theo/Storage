@@ -1,0 +1,17 @@
+public static void main(String[] args)
+
+//这里要告诉定义的 Array 数组类具体是什么类型，告诉泛型到底使用的是哪种类型,这里不能使用 Array<int>，因为基本数据类型不支持泛型，所以要使用该 int 类型对应的包装类 Integer.
+Array< Integer> arr = new Array<>(); //这里不加参数，使用默认容量，默认容量在 Array 类定义的无参构造函数中，是10
+//将这10个数组的空间填满
+for(int i=0; i<10; i++){
+    arr.addLast(i);
+}
+
+//数组满了，再加一个数组，进行扩容函数的测试
+arr.add(1, 100);
+//通过打印 arr 数组信息 capacity，可以看到容量变成了20，已经扩容了
+System.out.println(arr);
+
+
+arr.addFirst(-1);
+System.out.println(arr);

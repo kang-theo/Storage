@@ -1,0 +1,103 @@
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.6.7)  23 JUN 2018 22:42
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**2-1-4.tex
+(./2-1-4.tex
+LaTeX2e <2018-04-01> patch level 2
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/cyrillic/ot2enc.def
+File: ot2enc.def 2001/08/11 v3.3a Cyrillic encoding definition file
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+)
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 105.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/04/06 v1.3b Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+) (./2-1-4.aux)
+\openout1 = `2-1-4.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT2/cmr/m/n on input line 6.
+LaTeX Font Info:    Try loading font information for OT2+cmr on input line 6.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/cyrillic/ot2cmr.fd
+File: ot2cmr.fd 2001/08/11 v3.2c Computer Modern Cyrillic font definitions
+)
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Try loading font information for OT2+lmr on input line 8.
+LaTeX Font Info:    No file OT2lmr.fd. on input line 8.
+
+
+LaTeX Font Warning: Font shape `OT2/lmr/m/n' undefined
+(Font)              using `OT2/cmr/m/n' instead on input line 8.
+
+Missing character: There is no К in font wnr10!
+Missing character: There is no р in font wnr10!
+Missing character: There is no ю in font wnr10!
+Missing character: There is no к in font wnr10!
+Missing character: There is no о in font wnr10!
+Missing character: There is no в in font wnr10!
+Missing character: There is no а in font wnr10!
+[1
+
+] (./2-1-4.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 618 strings out of 492970
+ 7185 string characters out of 6133939
+ 64127 words of memory out of 5000000
+ 4687 multiletter control sequences out of 15000+600000
+ 7063 words of font info for 17 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 22i,4n,20p,212b,113s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on 2-1-4.xdv (1 page, 260 bytes).

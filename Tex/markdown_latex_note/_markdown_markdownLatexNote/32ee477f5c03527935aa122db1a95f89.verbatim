@@ -1,0 +1,14 @@
+E ret = data[index];
+
+for(int i=index+1; i<size; i++){
+    data[i-1] = data[i]; 
+}
+size --; 
+data[size] = null; //loitering objects
+
+//缩减容量，因为扩容时按照扩容2倍来计算的，所以缩容时也缩减一半
+if(size == data.length/2){
+    resize(data.length/2);           
+}
+
+return ret;

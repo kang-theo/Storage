@@ -1,0 +1,11 @@
+title Seed Update
+
+' participant ContentServer #99FF99
+' participant AggregationServer #22EE99
+
+ContentServer -> ContentServer: ContentServer modify the seed change in real time
+ContentServer -> AggregationServer: if feed.txt has been changed(modified time changed)\nsend HTTP PUT request in XML form to AggregationServer
+AggregationServer -> ContentServer: create a feed_tmp.xml to receive the new seed
+AggregationServer -> AggregationServer: check the integrity of feed_tmp.xml
+AggregationServer -> AggregationServer: if the file is correct, rename to feed.xml
+AggregationServer -> ContentServer: send 200 updated response to ContentServer

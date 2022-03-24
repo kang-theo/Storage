@@ -1,0 +1,96 @@
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.6.7)  17 JUN 2018 23:27
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**titlesec-texstudio.tex
+(./titlesec-texstudio.tex
+LaTeX2e <2018-04-01> patch level 2
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/blindtext/blindtext.sty
+Package: blindtext 2012/01/06 V2.0 blindtext-Package
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+\c@blindtext=\count88
+\c@Blindtext=\count89
+\c@blind@countparstart=\count90
+\blind@countxx=\count91
+\blindtext@numBlindtext=\count92
+\blind@countyy=\count93
+\c@blindlist=\count94
+\c@blindlistlevel=\count95
+\c@blindlist@level=\count96
+\blind@listitem=\count97
+\c@blind@listcount=\count98
+\c@blind@levelcount=\count99
+\blind@mathformula=\count100
+\blind@Mathformula=\count101
+\c@blind@randomcount=\count102
+\c@blind@randommax=\count103
+\c@blind@pangramcount=\count104
+\c@blind@pangrammax=\count105
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
+\ttl@box=\box26
+\beforetitleunit=\skip43
+\aftertitleunit=\skip44
+\ttl@plus=\dimen103
+\ttl@minus=\dimen104
+\ttl@toksa=\toks14
+\titlewidth=\dimen105
+\titlewidthlast=\dimen106
+\titlewidthfirst=\dimen107
+)
+
+LaTeX Warning: Unused global option(s):
+    [lipt].
+
+(./titlesec-texstudio.aux)
+\openout1 = `titlesec-texstudio.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+ [1
+
+] [2] [3] (./titlesec-texstudio.aux) ) 
+Here is how much of TeX's memory you used:
+ 669 strings out of 492970
+ 9188 string characters out of 6133939
+ 82132 words of memory out of 5000000
+ 4737 multiletter control sequences out of 15000+600000
+ 3696 words of font info for 21 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 33i,4n,27p,174b,406s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on titlesec-texstudio.pdf (3 pages).

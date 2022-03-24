@@ -1,0 +1,20 @@
+title Lamport Clock
+
+== Scenario 1: Client1 GET -> Content Server PUT -> Client2 GET ==
+Client1 -> ATOM_Server: HTTP GET 
+ATOM_Server -> Client1: HTTP Resp
+note left: 1
+Content_Server -> ATOM_Server: HTTP PUT
+note right: 2
+Client2 -> ATOM_Server: HTTP GET
+note left: 3
+ATOM_Server -> Client2: HTTP Resp
+
+legend
+1. Client1 GET request firstly
+2. Content_Server PUT request secondly
+3. Then Client2 GET request
+So, the order should use Lamport clock
+endlegend
+
+@enduml

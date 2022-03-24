@@ -1,0 +1,15 @@
+digraph g {
+    // graph[ordering="out"];
+    A->B[label="2"];
+    // A->C[label=" 1"];
+    A->D[label=" 3"];
+    D->E[label="-10"];
+    B->E[label="1"];
+    // C->E[label="1"];
+    A[shape="circle"];
+    B[shape="circle"];
+    // C[shape="circle"];
+    D[shape="circle"];
+    E[shape="circle"];
+    NULL[style="invis"];
+}

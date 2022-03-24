@@ -1,0 +1,34 @@
+title ETS Employee Information System
+
+== Employee creating ==
+Employee -> Manager: new employee joining the company
+Manager-> ETS: 1. press sign up \n2. input username & password \n3. assign an username and password for the employee
+ETS -> Database: Save user info, with some initial info. 
+Manager -> Employee: Give the account information to the employee
+
+
+== Employee Login in ==
+Employee -> ETS: 1. press login in \n2. input username & password 
+ETS -> Database: verify username & password
+ETS -> Employee: push user info page
+Employee -> ETS: choose the course they want to enroll \nand then read the wikis and attend the quiz\nThey can also check the progress
+
+== Employee personal information update ==
+Employee -> ETS: login in the ETS
+ETS -> Employee: push the employee's personal information webpage
+Employee -> ETS: update his information
+ETS -> Employee: push a success webpage to the employee
+
+== Employee Management ==
+Manager -> ETS: save the user info in users table in database
+ETS -> Manager: visualize the users data info and display it in a webpage
+Manager -> ETS: change the information for an employee \nlike change the progress, delete an employee, etc.
+ETS -> Database: reflect the modification in the step above in the database
+Manager -> Employee: give the new information to the employee
+
+legend
+1. Employee creating and employee management is for the manager
+2. Employee login in is for employees only
+endlegend
+
+@enduml

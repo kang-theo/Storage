@@ -1,0 +1,23 @@
+PWD /Users/kangchangyu/kiwichangyu/ktest/tex/Latex notes
+INPUT /usr/local/texlive/2018/texmf.cnf
+INPUT /usr/local/texlive/2018/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2018/texmf-var/web2c/xetex/xelatex.fmt
+INPUT example 3 - 段落对齐.tex
+OUTPUT example 3 - 段落对齐.log
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/book.cls
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/book.cls
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/bk10.clo
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/bk10.clo
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/inputenc.sty
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/base/inputenc.sty
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/tools/indentfirst.sty
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/tools/indentfirst.sty
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/lipsum/lipsum.sty
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/lipsum/lipsum.sty
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/setspace/setspace.sty
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/setspace/setspace.sty
+INPUT example 3 - 段落对齐.aux
+INPUT example 3 - 段落对齐.aux
+OUTPUT example 3 - 段落对齐.aux
+OUTPUT example 3 - 段落对齐.xdv
+INPUT example 3 - 段落对齐.aux

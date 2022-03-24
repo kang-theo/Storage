@@ -1,0 +1,17 @@
+if(index < 0 ||  index > size){
+    throw new IllegalArgumentException("Add failed. Require index >= 0 and index <= size");
+}   
+
+if(size == data.length){
+    //throw new IllegalArgumentException("Add failed. Array is full.");
+    //数组容量达到 capacity,满了，此时不再抛出异常，而是进行动态扩容
+    resize(2 * data.length); //这里不要扩容常数个容量，按比例扩容比较合理
+}
+
+//从最后一个位置的元素（size-1）开始，依次往后挪一个位置        
+for(int i=size-1; i>=index; i--){
+data[i+1] = data[i]; 
+}
+
+data[index] = e;
+size ++;

@@ -1,0 +1,24 @@
+\documentclass{book}
+
+
+
+
+
+
+\begin{document}
+
+\setcounter{tocdepth}{6} % 设 定 目 录 深 度 
+\tableofcontents % 列 出 目 录
+\listoffigures
+\listoftables % 问题：不显示在目录中
+
+\part{Part}
+\chapter{Chapter}
+\section{Section}
+\section{Section\_Hide} %不显示， 注意，这里的_需要使用\_， \ 本身则要用 \textbackslash 命令来输入，因为 \\ 被用作换行指令, 为什么不用 C 语言的 \n 呢，也许因为 TEX 的编程语言是 Pascal。
+\subsection{Subsection}
+\subsubsection{subsubsection}
+\paragraph{paragraph}
+\subparagraph{subparagraph}
+
+\end{document}

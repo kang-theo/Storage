@@ -1,0 +1,109 @@
+    private int[] data;
+    private int size;
+
+    //构造函数，传入数组的容量 capacity 构造 Array
+    public Array(int capacity){
+        data = new int[capacity];
+        size = 0;
+    }
+    //无参构造函数，有参构造函数定以后，无参构造函数不会自动生成；默认数组容量为 capacity=10
+    putlic Array(){
+        this(10);
+    }
+
+    //获取数组中的元素个数  
+    public int getSize(){
+        return size;
+    }
+
+    // 获取数组的容量
+    public int getCapacity(){
+        return data.length;
+    }
+
+    // 返回数组是否为空
+    public boolean isEmpty(){
+        return size == 0;
+    }
+
+    //向数组所有元素后添加一个新元素
+    public void addLast(int e){
+        //如果数组满了，不能添加新元素，抛出异常
+        if(size == data.length){
+            throw new IllegalArgumentException("Addlast failed. Array is full.");
+        }
+
+        data[size] = e;
+        size ++;
+    }
+    //有了下面这个在 index 位置添加元素的函数 add，那么上面 addLast 就可以复用add 这个函数了，下面给出重新实现：
+    public void addLast(int e){
+        //向最后一个位置添加元素就是向第 size 个位置添加元素，size 始终指向最后一个元素的后一个空位置，size-1始终是数组最后一个元素位置
+        add(size, e);
+    }
+
+    //同理，可以借助 add 实现 addFirst
+    public void addLast(int e){
+        //在开头添加就是在索引为0处添加
+        add(0, e);
+    }
+
+    //向第 index个位置添加一个新元素
+    public void add(int index, int e){
+        //如果数组满了，不能添加新元素，抛出异常
+        if(size == data.length){
+            throw new IllegalArgumentException("Add failed. Array is full.");
+        }
+        //1. 因为 size 初始值为0，指向数组第一个位置，与初始下标0一致，最后一个元素是arr[size - 1]， 即数组的第一个空位置是 size, 为了保证数组紧密存储，下一个元素必须添加在 size 位置上，否则， 见2
+        //2. 如果 index 取比 size大的值，说明数组中的元素将不会是紧密排列的，中间会有空置未用的位置
+        if(index < 0 ||  index > size){
+            throw new IllegalArgumentException("Add failed. Require index >= 0 and index <= size");
+        }   
+        //从最后一个位置的元素（size-1）开始，依次往后挪一个位置        
+        for(int i=size-1; i>=index; i--){
+        data[i+1] = data[i]; 
+        }
+
+        data[index] = e;
+        size ++;
+    } 
+
+    /*本节新增*/
+    //获取 index索引位置的元素
+    int get(int index){
+        //保证了不在 size 范围内的元素不会被获取到，保护了数据的安全
+        if(index < 0 || index >= size){
+            throw new IllegalArgumentException("Get failed. Index is invalid.");   
+        }
+
+        return data[index];
+    }
+    /*本节新增*/
+    //获取 index索引位置的元素
+    int set(int index, int e){
+        //保证了不在 size 范围内的元素不会被修改，保护了数据的安全
+        if(index < 0 || index >= size){
+            throw new IllegalArgumentException("Get failed. Index is invalid.");   
+        }
+
+        data[index] = e;
+    }
+
+    /*本节新增*/
+    //格式化打印数组内容
+    #Override //如果下面方法名打错，编译器会给出提示，因为目的是覆盖父类的一个方法，而不是新增一个方法
+    public String toString(){
+        StringBuilder res = new StringBuilder();
+        res.append(String.format("Array: size = %d, capacity = %d\n", size, data.length));
+        res.append('[');
+        for(int i=0; i<size; i++){
+            res.append(data[i]);
+            //如果不是最后一个元素（最后一个元素位置为 size-1）
+            if(i != size -1){
+                res.append(", ");
+            }
+        }
+
+        res.append(']');
+        return res.toString();
+    }  

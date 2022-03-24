@@ -1,0 +1,10 @@
+title Seed create
+
+' participant ContentServer #99FF99
+' participant AggregationServer #22EE99
+
+ContentServer -> AggregationServer: Conterserver start and send HTTP PUT
+AggregationServer -> ContentServer: create a feed_tmp.xml to receive the new seed
+AggregationServer -> AggregationServer: check the integrity of feed_tmp.xml
+AggregationServer -> AggregationServer: if the file is correct, rename to feed.xml
+AggregationServer -> ContentServer: send 201 created response to ContentServer

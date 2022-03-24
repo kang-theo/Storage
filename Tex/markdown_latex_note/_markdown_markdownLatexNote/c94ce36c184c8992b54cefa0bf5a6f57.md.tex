@@ -1,0 +1,10 @@
+\markdownRendererHeadingOne{第二章 不要小瞧数组}\markdownRendererInterblockSeparator
+{}\markdownRendererHeadingTwo{2-1 使用 Java 中的数组}\markdownRendererInterblockSeparator
+{}数组三种定义方式： 1. int[] arr = new int[10]; 之后使用 for 循环为每个元素赋初值 2. int[] arr = new int[]\markdownRendererLeftBrace{}100, 99, 66\markdownRendererRightBrace{}; 3. int[] arr = \markdownRendererLeftBrace{}100, 99, 66\markdownRendererRightBrace{} 注：1、2中分配空间在堆中，3分配空间在栈中\markdownRendererInterblockSeparator
+{}\markdownRendererHeadingTwo{2-2 二次封装属于我们自己的数组}\markdownRendererInterblockSeparator
+{}\markdownRendererStrongEmphasis{数组优点：}随机读取，快速查询，所以数组最好应用于“索引有语意”的情况，比如索引表示学号，那么 scores[2]就是获取学号为2的同学的分数。\markdownRendererInterblockSeparator
+{}但并非都是“索引有语意”最好，比如使用身份证号查询某人的工资，那么如果以身份证作索引，就要开辟很大的数组空间，其中很大一部分是浪费的。此时可以通过一个函数对这个初始索引做进一步处理，三列在一个范围内，并且尽量避免重复，然后把这个函数的结果作为索引--类似哈希表（散列表）\markdownRendererInterblockSeparator
+{}数组没有语意的情况下，会有以下一些问题： 1. 如何表示没有元素？ 2. 如何添加和删除元素？ 3. ... ...\markdownRendererInterblockSeparator
+{}```Java public class Array\markdownRendererLeftBrace{}\markdownRendererInterblockSeparator
+{}\markdownRendererInputVerbatim{./_markdown_markdownLatexNote/bc245194db0eea0f6460618ef10f80ca.verbatim}\markdownRendererInterblockSeparator
+{}\markdownRendererRightBrace{} ```\relax

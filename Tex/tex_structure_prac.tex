@@ -1,0 +1,32 @@
+\documentclass[UTF8,a4paper,12pt]{article}
+\title{LaTeX Introduction}
+\date{} %不显示时间
+
+\usepackage{booktabs}
+
+\begin{document}
+  \maketitle
+  content
+
+  \section{Section One}
+  \subsection{Subsection One}
+  \subsubsection{Subsubsection One}
+  \subsubsection[abc]{test}\label{sec:system}
+
+  slfj\ref{sec:system}alfjsalfslafhlsahfasfsaflsjaf
+
+  \begin{table}[htp]
+	\centering
+	\caption{abc}
+	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}%表格两边顶格
+		\toprule
+		a             & b \\
+		\midrule
+		$s(x)$   		& c      \\
+		$I_1,I_2$        & d\\
+		\bottomrule
+	\end{tabular*}
+	\label{tab:symbol}
+\end{table}
+
+\end{document}

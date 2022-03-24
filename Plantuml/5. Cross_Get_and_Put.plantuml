@@ -1,0 +1,31 @@
+title Cross get and put
+
+' participant GETClient_1
+' participant GETClient_2
+' participant AggregationServer #22EE99
+' participant ContentServer_1 #99FF99
+' participant ContentServer_2 #99FF99
+
+== Scenario: Multiple PUT and GET ==
+ContentServer_1 -> AggregationServer: HTTP PUT
+note right: 1
+AggregationServer -> AggregationServer: order the request \nin lamport_clock
+note left: 2
+GETClient_1 -> AggregationServer: HTTP GET
+note right: 3
+AggregationServer -> AggregationServer: order the request \nin lamport_clock
+note left: 4
+ContentServer_2 -> AggregationServer: HTTP PUT
+note right: 5
+AggregationServer -> AggregationServer: order the request \nin lamport_clock
+note left: 6
+GETClient_2 -> AggregationServer: HTTP GET
+note right: 7
+
+legend 
+1. ContentServer_1 PUT request firstly
+2. Then ContentServer_2 PUT request
+So, the PUT order should use Lamport Clock
+endlegend
+
+@enduml

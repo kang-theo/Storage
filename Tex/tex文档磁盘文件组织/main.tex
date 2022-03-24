@@ -1,0 +1,20 @@
+% language-main.tex 
+\documentclass{book} 
+\usepackage{makeidx}
+\makeindex 
+\title{Languages}
+\author{someone} 
+
+\begin{document}
+%在目录之前用\frontmatter,目录和正文之间用\mainmatter。这样目录用的罗马数字，正文用阿拉伯数字且重新排序。
+\frontmatter      
+\maketitle
+\tableofcontents
+\mainmatter
+\include{intro}
+\include{class}
+\backmatter
+\include{appendix}
+\bibliography{foo}
+\printindex
+\end{document}

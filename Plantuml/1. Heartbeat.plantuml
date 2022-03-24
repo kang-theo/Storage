@@ -1,0 +1,27 @@
+title Heartbeat
+
+participant ContentServer #99FF99
+participant AggregationServer #22EE99
+
+ContentServer -> AggregationServer: heartbeat with a timestamp, frequency: 3s
+' note right: 1
+AggregationServer X-> ContentServer: update the timestamp, need not respond the heartbeat
+' note left: 2
+AggregationServer -> AggregationServer: start a timer, check every 3s
+' note right: 3
+AggregationServer -> AggregationServer: if no commjunication for 15s,detele the seed 
+' note right: 4
+ContentServer -> AggregationServer: send new seed toAggregation_Server 
+' note left: 5
+ContentServer -> AggregationServer: send heartbeat toAggregation_Server 
+AggregationServer -> AggregationServer: update the seed, and check heartbeat every 3s
+AggregationServer -> AggregationServer: if no commjunication for 15s,detele the seed 
+
+
+legend
+1. The Content_server will send heartbeat every 3 seconds;
+2. A timestamp is encapsulated in the packets;
+3. The AggregationServer store the last timestamp received for every ContentServer;
+4. If the current time is 15s later than the last heartbeat received;
+5. The seed will be deleted.
+endlegend

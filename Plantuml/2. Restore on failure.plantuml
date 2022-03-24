@@ -1,0 +1,23 @@
+title Restore on failure
+
+participant AggregationServer #22EE99
+participant ContentServer #99FF99
+
+== Scenario 1: receive data from ContentServer ==
+ContentServer -> AggregationServer: HTTP PUT
+' note right: 2
+AggregationServer -> AggregationServer: 1. create feed_tmp.xml
+AggregationServer -> AggregationServer: 2. check the integrity of the feed_tmp.xml
+AggregationServer -> AggregationServer: 3. if format correct, rename to feed.xml
+
+== Scenario 2: hardware faults ==
+AggregationServer -> AggregationServer: 4. if format incorrect, \nthe feed.xml won't be changed
+
+
+legend
+1. Receive the data from the ContentServer in a temp file
+2. The AggregationServer checks the format of the temp
+3. If the format is correct, rename it to feed.xml
+4. If the format is incorrect, the feed.xml is left unchanged
+So the feed.xml won't be impacted when hardware fault happens
+endlegend

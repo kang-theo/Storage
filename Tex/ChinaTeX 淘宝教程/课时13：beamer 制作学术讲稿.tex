@@ -1,0 +1,593 @@
+\documentclass[no-math, xcolor=table]{beamer} %no-math 不影响数学字体
+% compress → 以紧凑方式显示导航栏内容
+% handout → 取消重叠和动画效果, 便于打印
+
+% %讲义，竖向每页2张
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+% %横向，每页4张
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm, landscape]
+
+% 修正 XeTeX 下导航按钮失效问题
+% \usepackage{patchbeamer}
+
+\bibliographystyle{apalike}
+
+% package import=======================
+\usepackage[space, hyperref, UTF8]{ctex}
+
+% 主题样式
+% ◦ 没有导航条:default,AnnArbor,Bergen,Boadilla,CambridgeUS,... 
+% ◦ 带树形导航条: Antibes, JuanLesPins, Montpellier
+% ◦ 带侧边导航条:Berkeley,Goettingen,Hannover,Marburg,PaloAlto 
+% ◦ 带微型导航条:Berlin,Ilmenau,Darmstadt,Dresden,Frankfurt,... 
+% ◦ 带节小节标题: Copenhagen, Luebeck, Malmoe, Warsaw
+% \usetheme{Warsaw}
+% \usecolortheme{crane}
+% \usetheme{PaloAlto}
+\usetheme{CambridgeUS}
+% \usetheme{Berlin}
+% \usetheme{Singapore}
+% \usetheme{Madrid}
+
+% \usepackage{graphicx} %beamer 已自动包含了 graphicx 包，用于插入图片,也自动包含了 fontspec
+
+\logo{\includegraphics[width=0.1\textwidth]{Adelaide.png}}
+% \logo{NCCU} %会覆盖上面的图标
+
+%字体格式设置
+% \usepackage{mathpazo}
+% \usefonttheme{serif} 
+\usefonttheme[onlymath]{serif} %中文环境数学字体格式
+
+%插图自动编号
+% \usepackage[noindent,UTF8]{ctexcap}
+%图、表显示编号：表1，图1等
+\setbeamertemplate{caption}[numbered]
+%不想显示页眉信息
+\setbeamertemplate{headline}{}
+%不显示页脚信息
+\setbeamertemplate{footline}{}
+%不显示下面导航栏
+\setbeamertemplate{navigation symbols}{}
+
+
+%每节之间加个目录
+\setbeamerfont{myTOC}{series=\bfseries, size=\Large}
+\AtBeginSection{\frame{\frametitle{Outline}%
+				\usebeamerfont{myTOC}\tableofcontents[current]}}
+
+%幻灯片计时
+% \usepackage[timeinterval=15]{tdclock}
+\usepackage[font=Times, timeinterval=15, timeduration=5, timewarningfirst=85, timewarningsecond=90, fillcolorwarningsecond=white!60!yellow]{tdclock}
+
+%显示幻灯片时间
+% \date[\initclock\mmddyyyy\tddate\ \ \hhmmss\tdtime]{\today}
+
+
+
+
+% \author{kcy}
+% \title{First Beamer Start}
+
+\title[short title]{long long long title}
+% \title[標題 \hspace{2em}\insertframenumber/\inserttotalfr {簡報標題}
+\subtitle[short subtitle]{long subtitle}
+\author[short author names]{long author names}
+\date[short date]{long date}
+\institute[short institute]{long institute name}
+\titlegraphic{\includegraphics[width=0.35\textwidth]{Adelaide.png}}
+%设置封面标题颜色大小
+% \setbeamerfont{title}{size=\LARGE}
+% \setbeamercolor{title}{fg=yellow,bg=gray}
+
+
+% % begin tableofcontents format setting，from web
+% \makeatletter
+% \def\beamer@tocaction@only#1{\only<.(1)>{\usebeamertemplate**{#1}}}
+% \define@key{beamertoc}{subsectionsonly}[]{\beamer@toc@subsectionstyle{show/only}\beamer@toc@subsubsectionstyle{show/shaded/hide}}
+
+% \newif\ifbeamer@pausebeforesubsections
+% \define@key{beamertoc}{pausebeforesubsections}[true]{\beamer@pausebeforesubsectionstrue}
+
+% \patchcmd{\beamer@tableofcontents}{\beamer@pausesectionsfalse}%
+%   {\beamer@pausesectionsfalse\beamer@pausebeforesubsectionsfalse}{}{}
+
+% \patchcmd{\beamer@subsectionintoc}{\ifbeamer@pausesubsections\pause\fi}%
+%   {\ifbeamer@pausesubsections\pause\else%
+%    \ifbeamer@pausebeforesubsections\ifnumequal{#2}{1}{\pause}{}\fi\fi}{}{}
+% \makeatother
+% % end tableofcontents format setting 
+
+% %1 在每节前加一个目录
+% \AtBeginSection[]
+% {
+% 	\begin{frame}
+% 		\tableofcontents[currentsection]
+% 	\end{frame}
+% }
+% 2 在每节前插入目录
+% \AtBeginSection[]{\frame{\tableofcontents[currentsection,hideallsubsections]}}
+
+\AtBeginLecture{
+	\begin{frame}
+	\Large
+	This lecture added: \insertlecture	
+	\end{frame}
+}
+
+%生成节标题页
+% \AtBeginSection{
+%   \begin{frame}
+%   \sectionpage
+%   \end{frame}
+% }
+% \AtBeginSubsection{
+% 	\begin{frame}
+% 	\subsectionpage
+% 	\end{frame}
+% }
+
+%设置每个页面背景颜色
+% \setbeamertemplate{background}[grip][step=4mm,color=lightgray] %设置网格线
+\setbeamercolor{normal text}{bg=lightgray}
+%设置渐变背景色
+\definecolor{bottomcolor}{rgb}{0.32, 0.3, 0,38}
+\definecolor{middlecolor}{rgb}{0.08, 0.08, 0.16}
+\setbeamertemplate{background canvas}[vertical shading][bottom=bottomcolor, middle=middlecolor, top=black]
+
+
+\begin{document}
+
+% %显示幻灯片时间，有问题
+% \begin{frame}
+% % \initclock
+% Time now: \tdtime; Time past: \crono
+% \end{frame}
+
+
+%三种生成 titlepage 的方式
+% 1
+\frame{\titlepage}
+%显示本页页码
+% \insertframenumber/\inserttotalframenumber
+% 2
+% \begin{frame}
+	% \maketitle
+% \end{frame}
+% 3
+% \titlepage %不在 frame 中，默认在一张空白 frame 中显示 titlepage
+% 4
+% \begin{frame}
+% \titlepage
+% \end{frame}
+% 5
+% \begin{frame}[plain] %plain 风格
+%   \titlepage
+% \end{frame}
+
+% %another title page
+% \begin{frame}
+	% \title{Another title page}
+	% \author{kcy\\a1738097} 
+	% \institute[short institute]{long institute name}
+	% \titlegraphic{\includegraphics[width=0.35\textwidth]{Adelaide.png}}
+	% \centering{a1738097}
+	% \date{\today}
+	% \maketitle 
+% \end{frame}
+
+% 目录
+% % \tableofcontents的常用选项
+% - pausesections → 逐次显示目录
+% - hideallsubsections → 不显示所有子节标题
+% - hideothersubsections → 不显示其它节的子节标题
+% - currentsection → 仅显示当前节标题, 其它的以半透明方式显示 - currentsubsection → 显示当前节的子节标题
+% - sections={m-n} → 只在目录中显示第 m 到第 n 节
+\begin{frame}\frametitle{Outline}
+% \begin{frame}{Outline}{suboutline} %another way to generate frame, subtitle can also be added
+	\tableofcontents[pausesections] %这个必须放在一个 frame中，这里是放在 Outline frame 中, pausesections 是分步展现内容
+	% \tableofcontents[subsectionsonly, pausesections]
+	% \tableofcontents[subsectionsonly, pausebeforesubsections, pausesections]
+	% \tableofcontents[hideothersubsections, pausesections]
+	% \tableofcontents[hideallsubsections] %不显示子章节	
+
+	%设置目录字体颜色和大小
+	\setbeamercolor{section in toc}{fg=yellow!80!gray}
+	\setbeamertemplate{section in toc}[sections numbered]
+	%其中第一行将节标题颜色设为 yellow!80!gr 第二行设定在目录中显示节标题编号.页中节标题的模板和颜色:
+
+\end{frame}
+
+%Another table of contents
+% \frame{\tableofcontents}
+% \frame{\tableofcontents[currentsection]} %高亮显示当前讲述章节
+
+
+\lecture{lecture name\_1}{lecture label\_1}
+
+
+\part{Part}
+\begin{frame}
+	\partpage
+\end{frame}
+
+
+%比 part 更高一级，统一多个人的讲稿在一个 pdf 文件中，或者个人的多次讲稿在一个文件中
+%涉及到导言区的设置
+\lecture{lecture name\_2}{lecture label\_2}
+
+
+\begin{frame}
+\sectionpage
+\end{frame}
+
+\section{First section}
+	\subsection{First subsection}
+	\begin{frame}[c]\frametitle{First frame}
+	The counter goes here
+\end{frame}
+
+\section{Second section}
+	\subsection{Second subsection}
+	\begin{frame}[c]\frametitle{Second frame}
+	contents in second section
+\end{frame}
+
+
+
+\section*{Third section} % 不显示在目录中
+	\subsection{Third subsection}
+	\begin{frame}[plain]
+
+	This is the plain frame, it may be used to show a big picture
+
+	\end{frame}
+
+
+
+%列表
+\section{Fourth section}
+\begin{frame}[t]\frametitle{itemize}
+	\begin{itemize}
+		\item The first item
+		\item The second item
+		\item The third item
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]\frametitle{enumerate}
+	\begin{enumerate}
+		\item The first item
+		\item The second item
+		\item The third item
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}[t]\frametitle{description}
+	\begin{description}
+		\item[First Item] Description of first item
+		\item[Second Item] Description of second item
+		\item[Third Item] Description of third item
+	\end{description}
+\end{frame}
+
+% 插入图片
+% \begin{frame}[c]{picture}{picture insert}
+% 	\begin{figure}
+% 		\centering
+% 		\includegraphics[width=.8\textwidth]{Wireless_network_topology.jpg} %这里文件名必须不能有空格
+% 		\caption{Wired connection topology(Cisco, 2017)}
+% 	\end{figure}
+% \end{frame}
+
+\begin{frame}[c]\frametitle{multi-columns}
+	%多栏环境
+	\begin{columns}
+		\column{.49\textwidth} %版心的0.49倍
+		\begin{itemize}
+			\item The first item
+			\item The second item
+			\item The third item
+		\end{itemize}
+		\column{.49\textwidth}
+		\begin{enumerate}
+			\item The first item
+			\item The second item
+			\item The third item
+		\end{enumerate}
+	\end{columns}
+
+\end{frame}
+
+% 自动分帧	
+\begin{frame}[t, allowframebreaks]\frametitle{title}
+	afea\\
+	sfjaf∫\\
+	lsfjls\\
+	ljfs\\
+	lsf\\
+	ljfslj\\
+	sdlf\\
+	sfj\\
+	sdfj\\
+	sdfjl\\
+	ljfs\\
+	lsf\\
+	ljfs\\
+	lsf\\
+	ljfslj\\
+	sdlf\\
+	sfj\\
+	sdfj\\
+	sdfjl\\
+	ljfs\\
+	ljfslj\\
+	sdlf\\
+	sfj\\
+	sdfj\\
+	sdfjl
+\end{frame}
+
+% 缩小比例，应用在每一页只多一点的情况下，最多不要縮小超過 5%
+\begin{frame}[shrink=5]\frametitle{title}
+	afea\\
+	sfjaf∫\\
+	lsfjls\\
+	ljfs\\
+	lsf\\
+	ljfslj\\
+	sdlf\\
+	sfj\\
+	sdfj\\
+	sdfjl\\
+	ljfs\\
+	lsf\\
+	ljfs\\
+	lsf\\
+	ljfslj\\
+	sdlf\\
+	sdfjl
+\end{frame}
+
+
+%小标题着色 block 环境
+\begin{frame}{自如之理，乃见真实}
+	\begin{block}{佛告须菩提}
+	凡所有相，皆是虚妄。若见诸相非相，则见如来。
+	\end{block}
+
+	\begin{alertblock}{佛告须菩提}
+	凡所有相，皆是虚妄。若见诸相非相，则见如来。
+	\end{alertblock}
+
+	\begin{exampleblock}{佛告须菩提}
+	凡所有相，皆是虚妄。若见诸相非相，则见如来。
+	\end{exampleblock} 
+\end{frame}
+
+%特效：分步展现
+\begin{frame}{受持此经，功德无量} 
+	\begin{itemize}
+		\item 初日分以恒河沙等身布施 \pause
+		\item 中日分复以恒河沙等身布施 \pause
+		\item 后日分亦以恒河沙等身布施 \pause
+		\item 如是无量百千万亿劫以身布施
+	\end{itemize} 
+\end{frame}
+
+%分步展现：+号相当于\pause,-相当于1-、2-等，在 item 环境后加上[<+->],相当于在每个 item 后面加上[<+->]
+\begin{frame}{受持此经，功德无量} 
+	\begin{itemize}[<+->]
+		\item 初日分以恒河沙等身布施 
+		\item 中日分复以恒河沙等身布施
+		\item 后日分亦以恒河沙等身布施 
+		\item 如是无量百千万亿劫以身布施
+	\end{itemize} 
+\end{frame}
+
+% <+-| alert@+> <+-| structure@+>
+\begin{frame}{古希腊数学}
+勾股定理在西方称为毕达哥拉斯定理，古希腊数学家在 2000 多年前就已经发现并证明了它。\pause
+	\begin{itemize}
+		\item<+-| alert@+>
+		  公元前 6 世纪，毕达哥拉斯学派发现一个法则，可以构造直角三角形的边长；
+		\item<+-| alert@+>
+		  公元前 3 世纪，欧几里德《几何原本》使用面积法证明勾股定理。
+	\end{itemize}
+\end{frame}
+
+%特效：分步展现之精确控制展现步骤
+\begin{frame}{受持此经，功德无量} 
+	\begin{itemize}
+		\onslide<2>{\item 初日分以恒河沙等身布施} 
+		\only{\item only}
+		\onslide<3->{\item 中日分复以恒河沙等身布施} %3步及之后都展现
+		\onslide<2,4>{\item 后日分亦以恒河沙等身布施} %2、4步展现
+		\onslide<1>{\item 如是无量百千万亿劫以身布施}
+
+	\end{itemize} 
+\end{frame}
+
+%分步展现：+号相当于\pause,-相当于1-、2-等，在 item 环境后加上[<+->],相当于在每个 item 后面加上[<+->]
+\begin{frame}{受持此经，功德无量} 
+	\begin{itemize}[<+->]
+		\onslide<2>{\item 初日分以恒河沙等身布施} 
+		\only{\item only}
+		\onslide<3->{\item 中日分复以恒河沙等身布施} %3步及之后都展现
+		\onslide<2,4>{\item 后日分亦以恒河沙等身布施} %2、4步展现
+		\onslide<1>{\item 如是无量百千万亿劫以身布施}
+
+	\end{itemize} 
+
+	% \uncover 控制内容什么时候显示, 但不显示时仍占据版面， \only 内容不显示时完全消失(不占版面)
+	\only<4>{only 第4张以后才会出现} 
+
+	only 测试
+
+	\uncover<6>{uncover 第6张以后 才会出现}
+
+	uncover 测试
+\end{frame}
+
+\begin{frame}{古中国数学}{定理证明}
+有论者认为早在公元前 11 世纪商高即已证明勾股定理。完整的证明见于三国时（公元 3 世纪）赵爽对《周髀算经》的注释。
+	\pause
+	\begin{figure}
+		\centering
+		\includegraphics[height=0.4\textheight]{Adelaide.png}
+		\caption{勾股图}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{背景介绍}
+\begin{itemize}
+\item 考虑问题
+    $$ a^2+b^2=c^2.$$
+
+\bigskip %\smallskip
+\item 问题应用背景
+    \begin{itemize}
+        \item  xxxxx
+        \item  xxxx
+        \item  xxxxx
+        \item $\cdots\ \cdots$  %省略号
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+% 强调
+\begin{frame}{强调}
+	最重要的就是 \alert{這一點}
+	只有在 \alert<2>{第二張} 才重要。
+
+	% 绿色强调
+	{\color{green}{綠色的文字}}, 其他正常。
+	只有在 {\color<2>{green}{第二張}} 才是綠色的。
+
+	\begin{block}{小重點} 
+		重點就是重點。 
+	\end{block}
+
+	\begin{alertblock}{大重點} 
+		特別重要的東西。 
+	\end{alertblock}
+\end{frame}
+
+% 显示源代码，并进行转义
+\begin{frame}{源代码}
+
+	% \begin{verbatim} 
+	% 	for i in range(10):
+	% 	print i 	
+	% \end{verbatim}
+
+	\begin{semiverbatim} 
+		for \alert{i} in range(10):
+		print \alert{i}
+	\end{semiverbatim}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{An Algorithm For Finding Primes Numbers.}
+\begin{verbatim}
+int main (void)
+{
+std::vector<bool> is_prime (100, true);
+for (int i = 2; i < 100; i++)
+if (is_prime[i])
+{
+std::cout << i << " ";
+for (int j = i; j < 100; is_prime [j] = false, j+=i);
+}
+return 0;
+}
+\end{verbatim}
+
+\begin{uncoverenv}<2> 
+	Note the use of \verb|std::|. 
+\end{uncoverenv}
+
+\end{frame}
+
+
+%幻灯片跳转
+\begin{frame}[label=here]{幻灯片跳转}
+	過來這裡!
+\end{frame}
+
+\begin{frame}{幻灯片跳转}
+	\hyperlink{here}{\beamerbutton{去吧}}
+\end{frame}
+
+
+% \begin{frame}{勾股数}
+% 	\begin{table}
+% 		\centering
+% 		% 颜色 craneorange 是在 crane 色彩主题中定义的
+% 		\rowcolors{2}{craneorange!25}{craneorange!50} %需要在文档类中开启 xcolor 选项， 这里的 cranneorange 颜色需要使用 crane颜色主题
+% 		\begin{tabular}{rrr}
+% 			\rowcolor{craneorange}直角边 $a$ & 直角边 $b$ & 斜边 $c$\\
+% 			3 & 4 & 5 \\
+% 			5 & 12 & 13 \\
+% 			7 & 24 & 25 \\
+% 			8 & 15 & 17 \\
+% 		\end{tabular}
+% 		\caption{较小的几组勾股数}
+% 	\end{table}
+% \end{frame}
+
+% \begin{frame}{带色边框}
+% %彩色盒子
+% % % 常用选项
+% % - wd → 盒子宽度, 缺省为 wd=\textwidth
+% % - colsep → 文本与盒子边界的间距
+% % - colsep* → 文本与盒子上下边界的间距
+% % - rounded=true → 圆角, 缺省为直角
+% % - shadow=true → 添加阴影, 增加立体感, 需与 rounded 一起使用 - center → 文本与盒子居中对齐, 缺省为左对齐
+% 	\begin{beamercolorbox}[wd=2\textwidth, rounded=true, shadow=true, center]{red} 
+% 	% \begin{beamercolorbox}{red} 
+% 	aslfjlsdafsdlaf
+% 	\end{beamercolorbox}
+% \end{frame}
+
+ %带标题的圆角盒子
+%  常用选项
+% - upper=beamer 颜色 → 指定标题区域的前景与背景颜色 - lower=beamer 颜色 → 指定文本区域的前景与背景颜色 - width → 盒子宽度
+% - shadow=true → 添加阴影, 增加立体感
+ % \begin{beamerboxesrounded}[选项]{标题} 
+ % ... ...
+ % \end{beamerboxesrounded}
+
+
+% %添加参考文献
+% \begin{frame}[allowframebreaks]{References}
+	% \nocite{keylist}
+	% \def\newblock{}
+	% \bibliographystyle{plain}
+	% \bibliography{mybib.bib}
+% \end{frame}
+
+\begin{thebibliography}{10} %这里9 或者99表示文献列表最大值
+\bibitem{Golub96}
+ G.H. Golub and C. Van loan,
+ \newblock ‘‘Matrix Computations,’’
+ \newblock The Jhon Hopkins University press, 1996.
+\end{thebibliography}
+
+% ◦ plain→取消headlines,footlines和sidebars
+% ◦ t,c,b→文字竖直方向的对齐方式
+% ◦ fragile/containsverbatim→若需要使用抄录环境,则应该加该选项 ◦ shrink→自动缩小,以便放下所有内容
+% ◦ allowframebreaks→当内容太长时,允许分帧显示
+\begin{frame}[c,plain]
+\begin{center}
+\Huge\color{red}\heiti\bfseries 谢\quad 谢!
+
+  Thank you!
+\end{center}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,100 @@
+\markdownRendererHeadingOne{第二章 不要小瞧数组}\markdownRendererInterblockSeparator
+{}\markdownRendererHeadingTwo{2-1 使用 Java 中的数组}\markdownRendererInterblockSeparator
+{}数组三种定义方式： 1. int[] arr = new int[10]; 之后使用 for 循环为每个元素赋初值 2. int[] arr = new int[]\markdownRendererLeftBrace{}100, 99, 66\markdownRendererRightBrace{}; 3. int[] arr = \markdownRendererLeftBrace{}100, 99, 66\markdownRendererRightBrace{} 注：1、2中分配空间在堆中，3分配空间在栈中\markdownRendererInterblockSeparator
+{}\markdownRendererHeadingTwo{2-2 二次封装属于我们自己的数组}\markdownRendererInterblockSeparator
+{}\markdownRendererStrongEmphasis{数组优点：}随机读取，快速查询，所以数组最好应用于“索引有语意”的情况，比如索引表示学号，那么 scores[2]就是获取学号为2的同学的分数。\markdownRendererInterblockSeparator
+{}但并非都是“索引有语意”最好，比如使用身份证号查询某人的工资，那么如果以身份证作索引，就要开辟很大的数组空间，其中很大一部分是浪费的。此时可以通过一个函数对这个初始索引做进一步处理，三列在一个范围内，并且尽量避免重复，然后把这个函数的结果作为索引--类似哈希表（散列表）\markdownRendererInterblockSeparator
+{}数组没有语意的情况下，会有以下一些问题： 1. 如何表示没有元素？ 2. 如何添加和删除元素？ 3. ... ... 这些问题在 Java 提供的数组中是没有这些方法的，所以要基于 Java 的数组，二次封装我们自己的数组类 \markdownRendererImage{-w487}{media/15343102031344/15343119058227.jpg}{media/15343102031344/15343119058227.jpg}{}\markdownRendererInterblockSeparator
+{}capacity 是这个数组的容量，size是实际存放的元素个数，所以后续需要维护 size。\markdownRendererInterblockSeparator
+{}```Java public class Array\markdownRendererLeftBrace{}\markdownRendererInterblockSeparator
+{}\markdownRendererInputVerbatim{./_markdown_markdownLatexNote/bc245194db0eea0f6460618ef10f80ca.verbatim}\markdownRendererInterblockSeparator
+{}\markdownRendererRightBrace{} ```\markdownRendererInterblockSeparator
+{}\markdownRendererHeadingTwo{2-3 向数组中添加元素}\markdownRendererInterblockSeparator
+{}\markdownRendererOlBeginTight
+\markdownRendererOlItemWithNumber{1}想数组末尾添加元素 初始化 size = 0； 向数组中添加元素就相当于在 size 位置添加元素，加入后，size 需要自增。\markdownRendererOlItemEnd 
+\markdownRendererOlItemWithNumber{2}向第 index 个位置插入元素 \markdownRendererImage{-w470}{media/15343102031344/15343129631606.jpg}{media/15343102031344/15343129631606.jpg}{} 需要先把88，99，100依次往后挪，然后把77放入索引为1的位置，之后 size++。\markdownRendererOlItemEnd 
+\markdownRendererOlEndTight \markdownRendererInterblockSeparator
+{}```Java public class Array\markdownRendererLeftBrace{}\markdownRendererInterblockSeparator
+{}\markdownRendererInputVerbatim{./_markdown_markdownLatexNote/a6cfeec21dd5e358c55ee452389a31d9.verbatim}\markdownRendererInterblockSeparator
+{}\markdownRendererRightBrace{} \markdownRendererCodeSpan{
+\markdownRendererHash{}\markdownRendererHash{} 2-4 数组中查询和修改元素
+}Java public class Array\markdownRendererLeftBrace{}\markdownRendererInterblockSeparator
+{}\markdownRendererInputVerbatim{./_markdown_markdownLatexNote/b61c115b34a99bbe921a433cbd9e6a86.verbatim}\markdownRendererInterblockSeparator
+{}\markdownRendererRightBrace{} ```\markdownRendererInterblockSeparator
+{}\markdownRendererInputVerbatim{./_markdown_markdownLatexNote/f1a5b0583e4edbba3aab68fadde5b540.verbatim}\markdownRendererInterblockSeparator
+{}\markdownRendererHeadingTwo{2-5 包含、搜索和删除}\markdownRendererInterblockSeparator
+{}\markdownRendererOlBeginTight
+\markdownRendererOlItemWithNumber{1}判断是否包含元素 e\markdownRendererOlItemEnd 
+\markdownRendererOlItemWithNumber{2}查找元素 e 所在的索引\markdownRendererOlItemEnd 
+\markdownRendererOlItemWithNumber{3}删除数组中某个元素，删除后需要维护 size的值 \markdownRendererImage{-w484}{media/15343102031344/15343170251473.jpg}{media/15343102031344/15343170251473.jpg}{}\markdownRendererOlItemEnd 
+\markdownRendererOlEndTight \markdownRendererInterblockSeparator
+{}```Java public class Array\markdownRendererLeftBrace{}\markdownRendererInterblockSeparator
+{}\markdownRendererInputVerbatim{./_markdown_markdownLatexNote/5809db8d89eb406fc48dadb1e005ba1a.verbatim}\markdownRendererInterblockSeparator
+{}\markdownRendererRightBrace{} ```\markdownRendererInterblockSeparator
+{}```Java 测试一下上面的自定义的数组类 public class Main\markdownRendererLeftBrace{}\markdownRendererInterblockSeparator
+{}\markdownRendererInputVerbatim{./_markdown_markdownLatexNote/0e48d19e48c67d947a95d1a06ab0cd96.verbatim}\markdownRendererInterblockSeparator
+{}\markdownRendererRightBrace{}\markdownRendererInterblockSeparator
+{}```\markdownRendererInterblockSeparator
+{}\markdownRendererHeadingTwo{2-6 使用泛型}\markdownRendererInterblockSeparator
+{}目前为止，创建的数组只能存放整型，可以使用泛型解决这个问题，使得数据结构可以存放任意的数据类型。\markdownRendererInterblockSeparator
+{}但是在Java中，一个泛型类并不是可以放置任意数据类型的，它不能放置\markdownRendererStrongEmphasis{基本数据类型，只能放置类对象}\markdownRendererInterblockSeparator
+{}基本数据类型：boolean, byte, char, short, int, long, float, double\markdownRendererInterblockSeparator
+{}但是 Java 中对每个基本数据类型进行了包装，称为包装类，包括Boolean, Byte, Char, Short, Int, Long, Float, Double \markdownRendererEmphasis{基本数据类型在需要时可以自动转换成它所对应的包装类，包装类也会在需要时自动转换成基本数据类型}\markdownRendererInterblockSeparator
+{}\markdownRendererStrongEmphasis{下面对上面几节写的数组类代码进行泛型封装：}\markdownRendererInterblockSeparator
+{}```Java public class Array<E>\markdownRendererLeftBrace{}\markdownRendererInterblockSeparator
+{}\markdownRendererInputVerbatim{./_markdown_markdownLatexNote/c18a70b75758602ecb6b8d5150672e20.verbatim}\markdownRendererInterblockSeparator
+{}\markdownRendererRightBrace{} ```\markdownRendererInterblockSeparator
+{}```Java 泛型测试：测试一下上面的泛型封装 public class Main\markdownRendererLeftBrace{}\markdownRendererInterblockSeparator
+{}\markdownRendererInputVerbatim{./_markdown_markdownLatexNote/d7e6cb047660dfb5b0013df56f354ce8.verbatim}\markdownRendererInterblockSeparator
+{}\markdownRendererRightBrace{}\markdownRendererInterblockSeparator
+{}```\markdownRendererInterblockSeparator
+{}```Java public class Student\markdownRendererLeftBrace{} private String name; private int score;\markdownRendererInterblockSeparator
+{}\markdownRendererInputVerbatim{./_markdown_markdownLatexNote/eb43bd50ee0e2b6743a024fff46b70d9.verbatim}\markdownRendererInterblockSeparator
+{}\markdownRendererRightBrace{} ```\markdownRendererInterblockSeparator
+{}\markdownRendererHeadingTwo{2-7 动态数组}\markdownRendererInterblockSeparator
+{}上面自定义二次封装了自己的数组类，实现了很多方法，可以操作这个数组类对象，并且通过泛型封装，使得这个数组类可以存放任意类型的元素。但是本质上它还是使用的一个静态数组。\markdownRendererInterblockSeparator
+{}\markdownRendererImage{-w487}{media/15343102031344/15343328109202.jpg}{media/15343102031344/15343328109202.jpg}{} 数组存满后，申请一个更大容量的数组，再把原来数组中的元素拷贝到新数组中；之后把 data 指向新的数组: \markdownRendererImage{-w481}{media/15343102031344/15343328794105.jpg}{media/15343102031344/15343328794105.jpg}{} data 指向 newData 指向的新数组，newData 是在函数里申请的局部变量，使用完就释放掉了，data 是在类中定义的，它的生存周期与这个类相同。并且 data 与原数组使用了引用关系，原数组的内存会被垃圾清理机制清理掉。 最终结果为： \markdownRendererImage{-w605}{media/15343102031344/15343330095261.jpg}{media/15343102031344/15343330095261.jpg}{} 这是增长元素时，反之，在消减元素时，也可以使用反向的操作，避免空间的浪费。\markdownRendererInterblockSeparator
+{}这里把前面实现的 add、remove 方法拿过来加以说明，并实现了扩容、缩容函数resize： ```Java //添加元素时扩容 public void add(int index, E e)\markdownRendererLeftBrace{}\markdownRendererInterblockSeparator
+{}\markdownRendererInputVerbatim{./_markdown_markdownLatexNote/81c37eaf1584ff335b3147e76fb0f4a8.verbatim}\markdownRendererInterblockSeparator
+{}\markdownRendererRightBrace{} \markdownRendererInterblockSeparator
+{}private void resize(int newCapacity)\markdownRendererLeftBrace{} //前面说过，Java 不能 new 一个泛型数组，要经过 new 一个 Object(超级父类)数组类进行转换 这里也可以看到新的扩容的数组是一个局部变量指向的，下面 data 指向这个数组后，退出函数，newData就释放了 E[] newData = (E[])new Object[newCapacity]; for(int i=0; i<size; i++)\markdownRendererLeftBrace{} newData[i] = data[i];\markdownRendererLineBreak
+{}\markdownRendererRightBrace{}\markdownRendererInterblockSeparator
+{}\markdownRendererInputVerbatim{./_markdown_markdownLatexNote/6d102a45007a9ebd1dd78b7dcd451edc.verbatim}\markdownRendererInterblockSeparator
+{}\markdownRendererRightBrace{}\markdownRendererInterblockSeparator
+{}//删除元素是缩减容量 public E remove(int index)\markdownRendererLeftBrace{} if(index < 0 \markdownRendererPipe{}\markdownRendererPipe{} index >= size)\markdownRendererLeftBrace{} throw new IllegalArgumentException("Remove failed. Index is invalid.");\markdownRendererLineBreak
+{}\markdownRendererRightBrace{}\markdownRendererInterblockSeparator
+{}\markdownRendererInputVerbatim{./_markdown_markdownLatexNote/32ee477f5c03527935aa122db1a95f89.verbatim}\markdownRendererInterblockSeparator
+{}\markdownRendererRightBrace{}\markdownRendererInterblockSeparator
+{}```\markdownRendererInterblockSeparator
+{}```Java 泛型测试：测试一下上面的泛型封装 public class Main\markdownRendererLeftBrace{}\markdownRendererInterblockSeparator
+{}\markdownRendererInputVerbatim{./_markdown_markdownLatexNote/23c57b5c667d7e5daccb2a16b72a0d9b.verbatim}\markdownRendererInterblockSeparator
+{}\markdownRendererRightBrace{}\markdownRendererInterblockSeparator
+{}```\markdownRendererInterblockSeparator
+{}\markdownRendererHeadingTwo{2-8 简单的复杂度分析}\markdownRendererInterblockSeparator
+{}大\markdownRendererDollarSign{}O\markdownRendererDollarSign{}描述的是算法的运行时间和输入数据之间的关系 \markdownRendererImage{-w683}{media/15343102031344/15343346830237.jpg}{media/15343102031344/15343346830237.jpg}{}\markdownRendererInterblockSeparator
+{}为什么要用大 O，叫做 O(n)？ 忽略常数。上面程序实际时间 \markdownRendererDollarSign{}T = c1*n +c2\markdownRendererDollarSign{}\markdownRendererInterblockSeparator
+{}\markdownRendererUlBeginTight
+\markdownRendererUlItem \markdownRendererEmphasis{c1指的是上面程序中重复执行的指令中一次计算执行的多条指令总共运行的时间。上面程序中就是for 循环里的多条指令执行的时间。}\markdownRendererUlItemEnd 
+\markdownRendererUlItem \markdownRendererEmphasis{c2指的是不是每次都重复执行的代码运行时间之和。上面程序中就是 for 循环外执行的指令，如 int sum = 0;和 return sum;}\markdownRendererUlItemEnd 
+\markdownRendererUlEndTight \markdownRendererInterblockSeparator
+{}实际分析算法时把c1和c2都分析出来，没有必要，有时候也是不太可能的。因为不同语言不同实现转换成机器码，对应的机器码指令数可能不同，所以运行时间也不同，即使机器码指令数相同，但是底层 cpu 不同，执行一条指令的时间也是不统一的。所以实际上能知道 c1、c2是几条指令，但是实际上运行时间是很难精确的估计出来具体是多少的。所以算法复杂度分析经常忽略常数。\markdownRendererInterblockSeparator
+{}\markdownRendererImage{-w295}{media/15343102031344/15343353811297.jpg}{media/15343102031344/15343353811297.jpg}{}\markdownRendererInterblockSeparator
+{}这里有一个疑问：当 n 比较小时，明显第一个比第二个运行时间长，为什么说第二个算法的复杂度更高，性能更差呢？ \markdownRendererStrongEmphasis{解答}：大O 的表示实际翻译成中文叫：\markdownRendererStrongEmphasis{渐进时间复杂度}，是描述 n 趋近于无穷的情况下，不同算法孰快孰慢的。\markdownRendererInterblockSeparator
+{}当然这种 n 比较小的时候复杂度较好的特点，也能得到实际的运用。比如：在处理一些小数组的时候，可以使用插入排序替代快速排序或归并排序进行代码优化，可以得到15\markdownRendererPercentSign{}左右的性能提升。\markdownRendererInterblockSeparator
+{}\markdownRendererDollarSign{}T = 2\markdownRendererEmphasis{n}n + 300n + 10\markdownRendererDollarSign{} \markdownRendererDollarSign{}O(n\markdownRendererCircumflex{}2)\markdownRendererDollarSign{} 忽略低阶项，在 n 趋近于无穷时，低阶项对结果的影响很小。\markdownRendererInterblockSeparator
+{}下面分析前面数组类中实现的方法的时间复杂度： \markdownRendererImage{-w372}{media/15343102031344/15343362625206.jpg}{media/15343102031344/15343362625206.jpg}{}\markdownRendererInterblockSeparator
+{}addLast 操作，不需要移动数组其它元素，所以是常数复杂度，即与问题规模 n 无关; addFirst 操作，每次都要往后移动数组中所有元素，对于问题规模为 n 的，他要移动n 次元素; add 操作，与插入索引位置有关，如果为1，则与 addFirst 相同，如果为 n，那么与 addLast 相同，精确的复杂度计算需要概率论的知识，假设 index 取到1-n 的范围中每一个值的范围相同，那么可以精确计算它的期望，即为时间复杂度。在实际中可以粗略用平均的方法，即 index 取到 n/2，此时的复杂度为平均复杂度，为 O(n/2) = O(n) .\markdownRendererInterblockSeparator
+{}\markdownRendererImage{-w436}{media/15343102031344/15343369036870.jpg}{media/15343102031344/15343369036870.jpg}{} 上面添加操作的整体复杂度是 O(n)级别的，因为时间复杂度是计算最糟情况下的复杂度\markdownRendererInterblockSeparator
+{}\markdownRendererImage{-w663}{media/15343102031344/15343370014435.jpg}{media/15343102031344/15343370014435.jpg}{}\markdownRendererInterblockSeparator
+{}\markdownRendererImage{-w324}{media/15343102031344/15343370170343.jpg}{media/15343102031344/15343370170343.jpg}{} \markdownRendererImage{-w255}{media/15343102031344/15343370627761.jpg}{media/15343102031344/15343370627761.jpg}{}\markdownRendererInterblockSeparator
+{}上面是对于静态数组时间复杂度的分析，对于动态数组的时间复杂度为： \markdownRendererImage{-w497}{media/15343102031344/15343371196359.jpg}{media/15343102031344/15343371196359.jpg}{} 这里可以看到如果已知索引，那么时间复杂度是常数级别的，如果未知索引，那么就是 O(n)级别的。所以索引取的有语意还是比较重要的。 另外，对于增和删，它们时间复杂度都是 O(n),因为它里面包含了 resize 函数，这个函数时O(n)的，因为每次扩容，都要把原来数组内容拷贝一遍。这样来看，resize 函数性能较差，影响了增和删函数的性能，但实际上并非这样，完全使用最糟时间复杂度是不合理的，下节将介绍均摊时间复杂度，可以看到，resize 并非性能那么差。\markdownRendererInterblockSeparator
+{}\markdownRendererHeadingTwo{2-9 均摊复杂度和防止复杂度震荡}\markdownRendererInterblockSeparator
+{}上节说到 resize 函数，实际上，并不是每次都触发这个函数的。 \markdownRendererImage{-w576}{media/15343102031344/15343380242711.jpg}{media/15343102031344/15343380242711.jpg}{} 添加一个元素是一次操作，上面添加8次，一共触发8次操作，之后添加第9个元素时，会触发一次扩容，要拷贝原数组内容（8次），再添加第9个元素，所以一共进行了17次基本操作。\markdownRendererInterblockSeparator
+{}\markdownRendererImage{-w669}{media/15343102031344/15343382359434.jpg}{media/15343102031344/15343382359434.jpg}{} 即每 n+1次操作，触发一次 resize，把 resize 中的2n 次拷贝操作的时间均摊到n+1次的 addLast 操作中，得到平均每次 addLast 有2次基本操作。 这意味着，这样均摊时间，时间复杂度是 O(1)的。在这种情况下，计算均摊时间复杂度比计算最坏时间复杂度更有意义。 实际工程中，如果一个比较耗时的操作不是每次都触发的时候，这个耗时操作是可以分摊到其它的操作中去的。 同样分析 removeLast,最坏情况是O(n)级别的，但是均摊复杂度都是O(1)级别的。\markdownRendererInterblockSeparator
+{}\markdownRendererStrongEmphasis{复杂度震荡}： \markdownRendererImage{-w625}{media/15343102031344/15343386771385.jpg}{media/15343102031344/15343386771385.jpg}{}\markdownRendererInterblockSeparator
+{}对于之前实现的动态数组的 addLast 和 removeLast 函数，其中都要调用 resize 函数。如果添加一个元素，超出容量，需要扩容，此时触发 resize，执行一次 原数组 n 个元素的拷贝操作；紧接着又删除了一个元素，此时又触发了缩容操作，又要拷贝 n次数据。这种情况依次进行下去，形成震荡。 出现问题的原因：removeLast 时 resize 过于着急（Eager） 解决方案：Lazy 添加时，达到 capacity 后，就开始扩容，但是缩容时，不着急。删除元素后，不着急缩容，等等看是否还有删除操作。当容量剩余数组容量的1/4时，判断后面的空间确实用不到了，此时开始缩容。 \markdownRendererImage{-w597}{media/15343102031344/15343390107329.jpg}{media/15343102031344/15343390107329.jpg}{} 这里，缩容只是缩容整个数组的一半：即当 size == capacity/4时，才将 capacity 减半。 \markdownRendererImage{-w340}{media/15343102031344/15343390314196.jpg}{media/15343102031344/15343390314196.jpg}{}\markdownRendererInterblockSeparator
+{}上述 Lazy 机制的实现： ```Java public E remove(int index)\markdownRendererLeftBrace{} if(index < 0 \markdownRendererPipe{}\markdownRendererPipe{} index >= size)\markdownRendererLeftBrace{} throw new IllegalArgumentException("Remove failed. Index is invalid.");\markdownRendererLineBreak
+{}\markdownRendererRightBrace{}\markdownRendererInterblockSeparator
+{}\markdownRendererInputVerbatim{./_markdown_markdownLatexNote/5d69b1b82d988d1c635a6d53a5731a28.verbatim}\markdownRendererInterblockSeparator
+{}\markdownRendererRightBrace{}\markdownRendererInterblockSeparator
+{}```\relax

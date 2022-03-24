@@ -1,0 +1,26 @@
+title Lamport Clock
+
+participant GETClient
+participant AggregationServer #22EE99
+participant ContentServer #99FF99
+
+== Scenario 1: ContentServer put seed to AggregationServer ==
+ContentServer -> AggregationServer: send HTTP PUT, lamport_clock plus 1 \nand encapsulate in the request as a timestamp
+AggregationServer -> AggregationServer: get lamport_clock from \nrequest received
+AggregationServer -> AggregationServer: update lamport_clock \nif value in request is bigger
+AggregationServer -> ContentServer: lamport_clock plus 1 \nand send response to ContentServer
+ContentServer -> ContentServer: parse lamport_clock from the packet \nand update the self lamport_clock
+
+== Scenario 2: GETClient get seed from AggregationServer ==
+GETClient -> AggregationServer: send HTTP GET, lamport plus 1 \nand encapsulate in the request as a timestamp
+AggregationServer -> AggregationServer: parse lamport_clock from \nrequest received
+AggregationServer -> AggregationServer: update self lamport_clock \nif value in request is bigger
+AggregationServer -> GETClient: lamport_clock plus 1 \nand send response to GETClient
+GETClient -> GETClient: get lamport_clock from the packet \nand update the self lamport_clock
+
+legend
+1. The lamport_clock of GETClient/AggregationServer/ContentServer are independently defined
+2. Heartbeat packet will be sent every 3 seconds, but it will not change the lamport_clock
+endlegend
+
+@enduml

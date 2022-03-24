@@ -1,0 +1,6 @@
+PWD /Users/kangchangyu/kiwichangyu/ktest/tex/《Latex入门》配书案例
+INPUT /usr/local/texlive/2018/texmf.cnf
+INPUT /usr/local/texlive/2018/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2018/texmf-var/web2c/xetex/xelatex.fmt
+INPUT 1-2-4.tex
+OUTPUT 1-2-4.log

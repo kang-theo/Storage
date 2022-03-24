@@ -1,0 +1,11 @@
+title Feed expire and remove
+
+== Feed expire and remove ==
+Content_Server x<-> ATOM_Server:
+
+legend 
+1. Have no communication for 15s;
+2. Not the most recent 25 feed
+endlegend
+
+@enduml
