@@ -1,0 +1,22 @@
+sequenceDiagram
+    autonumber
+    participant AIML
+    participant Team10
+    participant HeartAI
+    participant RAPIDx
+    Team10->>Team10: Build API
+    AIML->>Team10: Upload models and API
+    Note right of AIML: Serialized model .pickle<br/>structured data(tropoline results)?
+    activate Team10 
+    Team10->>Team10: Build Docker images
+    Team10->>Team10: Test Docker containers
+    Team10-->>AIML: Test results
+    deactivate Team10
+    AIML->>HeartAI: Upload Docker images
+    HeartAI->>HeartAI: Deploy Docker images<br/> as containers
+    loop Model inference
+        RAPIDx->>HeartAI: Input data<br/>patient record
+        activate HeartAI
+        HeartAI-->>RAPIDx: Predict results<br/>probability values
+        deactivate HeartAI
+    end
