@@ -2,10 +2,12 @@
 *~
 .DS_Store
 
+##-------------------Office-------------------
+~$*
+
 ##-------------------Other-------------------
 node_modules
 .vscode
-
 
 ##--------------------TeX--------------------
 ## Core latex/pdflatex auxiliary files:
