@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{quiver}
+\usepackage{tikz-cd}
+
+\begin{document}
+
+\title{ quiverTest}
+
+\author{Theo}
+
+\date{March 26, 2022}
+
+\maketitle
+
+% https://q.uiver.app/?q=WzAsNCxbMCwwLCJhXjIiXSxbMSwwLCJiXzIiXSxbMSwxLCJcXGJ1bGxldCJdLFswLDEsIlxcYnVsbGV0Il0sWzAsMSwiIiwwLHsiY3VydmUiOi0xLCJjb2xvdXIiOlswLDYwLDYwXX1dLFswLDEsIiIsMix7ImN1cnZlIjoxLCJjb2xvdXIiOlsyNDAsNjAsNjBdfV0sWzEsMiwiZCIsMSx7ImN1cnZlIjotM31dLFsyLDNdLFszLDAsImMiLDEseyJjdXJ2ZSI6LTN9XV0=
+\[\begin{tikzcd}
+	{a^2} & {b_2} \\
+	\bullet & \bullet
+	\arrow[color={rgb,255:red,214;green,92;blue,92}, curve={height=-6pt}, from=1-1, to=1-2]
+	\arrow[color={rgb,255:red,92;green,92;blue,214}, curve={height=6pt}, from=1-1, to=1-2]
+	\arrow["d"{description}, curve={height=-18pt}, from=1-2, to=2-2]
+	\arrow[from=2-2, to=2-1]
+	\arrow["c"{description}, curve={height=-18pt}, from=2-1, to=1-1]
+\end{tikzcd}\]
+
+\end{document}
