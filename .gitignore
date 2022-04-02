@@ -8,6 +8,7 @@
 ##-------------------Other-------------------
 node_modules
 .vscode
+.history
 
 ##--------------------TeX--------------------
 ## Core latex/pdflatex auxiliary files:
