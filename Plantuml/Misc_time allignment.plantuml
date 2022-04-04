@@ -1,0 +1,13 @@
+title Agenda & Minutes
+' participant ContentServer #99FF99
+' participant AggregationServer #22EE99
+
+Agenda -> Minutes: 03/03: 1st within team meeting, no client
+Agenda -> Minutes: 03/07: 1st client meeting
+Agenda -> Minutes: 03/18: 2nd client meeting
+Agenda -> Minutes: 03/22: 3rd client meeting
+Agenda -> Minutes: 03/28: 4th client meeting. The 4th client meeting was held on Tuesday 28/03/2022 online at 11:30AM.
+Agenda -> Minutes: 04/08: 5th client meeting. The 5th client meeting was held on Tuesday 08/04/2022 online at 11:30AM.
+
+
+
