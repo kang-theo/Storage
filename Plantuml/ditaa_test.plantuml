@@ -1,3 +1,4 @@
+' References:
 ' https://plantuml.com/ditaa
 ' https://bl.ocks.org/nicerobot/8379371
 
@@ -40,8 +41,6 @@ ditaa
 |    |    |  \---+----/
 +----+----+    
 @endditaa
-
-
 
 @startuml
 ditaa(--no-shadows, scale=0.7)
@@ -97,8 +96,8 @@ ditaa(--no-shadows, scale=0.7)
 ' Point Markers:
 -------------=-------divider--------------------------
 
-*----*   
-|    |   
+*----*                      
+|    |                      
 *    *       /--*   ---=--->
 |    |       |      --abc-->
 *----*   -*--+      *---*-->
@@ -146,21 +145,21 @@ ditaa(--no-shadows, scale=0.7)
 @startditaa
 ' Memory:
 
-      +--------+
-   0  |        |  <- start
-      +--------+
-   1  |        |  <- q  scans from start to end
-      +--------+
-      :  ..... |
-      +--------+
-      |        |  <- end
-      +--------+  <-+
-      |        |    |
-      +--------+    | rest of the
-      :  ..... |    | allocated memory
-      +--------+    |
-  n   |        |    |
-      +--------+  <-+
+   +--------+
+0  |        |  <- start
+   +--------+
+1  |        |  <- q  scans from start to end
+   +--------+
+   :  ..... |
+   +--------+
+   |        |  <- end
+   +--------+  <-+
+   |        |    |
+   +--------+    | rest of the
+   :  ..... |    | allocated memory
+   +--------+    |
+n  |        |    |
+   +--------+  <-+
 
 ' Strings:
 
