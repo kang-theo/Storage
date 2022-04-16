@@ -2,8 +2,14 @@
 *~
 .DS_Store
 
-##-------------------Office-------------------
+##-------------------Office------------------
 ~$*
+
+##-----------------R Markdown----------------
+RMarkdown/*/_site
+RMarkdown/.Rhistory
+# RMarkdown/*/.Rproj.user
+
 
 ##-------------------Other-------------------
 node_modules
@@ -312,3 +318,4 @@ TSWLatexianTemp*
 # option is specified. Footnotes are the stored in a file with suffix Notes.bib.
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
+.Rproj.user
