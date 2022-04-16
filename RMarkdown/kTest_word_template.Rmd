@@ -1,0 +1,18 @@
+---
+title: "kTest_word_template"
+author: "Theo"
+date: "`r Sys.Date()`"
+output:
+  word_document:
+    reference_docx: kTest_Document_template.docx
+---
+
+## R version 4.1.1 (2021-08-10)
+For more information about simple R Markdown websites, please read the docu
+
+## Platform: x86_64-apple-darwin17.0 (64-bit)
+For more information about simple R Markdown websites, please read the docuFor more information about simple R Markdown websites, please read the docuFor more information about simple R Markdown websites, please read the docu
+
+## Running under: macOS Big Sur 11.5.2
+### test
+For more information about simple R Markdown websites, please read the docuFor more information about simple R Markdown websites, please read the docuFor more information about simple R Markdown websites, please read the docuFor more information about simple R Markdown websites, please read the docuFor more information about simple R Markdown websites, please read the docu
