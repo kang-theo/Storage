@@ -1,0 +1,58 @@
+---
+title: "kTest_doc_custom_reference"
+output: 
+  word_document:
+    reference_docx: custom-reference_generated-by-Pandoc (Modified).docx
+---
+The 5th MCI group project client meeting will be held online (MS Team) on 28/03/2022 at 11:30AM
+
+
+**Chair**:  Andrew Butenko 
+
+**Members**: Andrew Butenko, Changyu Kang, Yu Zhang, Zhibin Liao
+
+**Secretary**: Changyu Kang
+
+# Apologies 
+None. 
+
+# Presentation
+Before the meeting, some thoughts and pitch presentation slides were shared on the MS Teams channel.
+
+## Functional requirements and Presentations in Last Meeting  
+1. Discuss pitch presentation and get feedback.
+2. Setup Business Case and Draft Plan group report in LaTeX. Convert SRS into plan. Move project management slides to the plan
+3. Discuss interfaces allowing client to submit and use models and show the project API structure.
+4. Draft presentation, video rehearsals in MS Teams
+
+### Problems and solutions 
+1. We were focusing on Business case and draft plan report building. Some requirements have been built from the use cases, some details still need to study from the provided AIML code, like the input variables and predication types.
+2. A solution environment has been established, but there are still some points to clarify, such as using REST or Graphql. Our team’s will demonstrate pros and cons for both approaches. The client will choose
+3. Delegate each student with parts in Business case and draft plan report.
+
+# Requirements Elicitation 
+* Merge SRS, communication plan with Business Case & Draft Plan
+* For the test, unit test framework
+*	Docker golden image is still not defined. Should be based on Ubuntu (as shown in the client codebase) or other lightweight images?
+*	Internal storage. How to manage model parameters and tabular data?
+*	Versioning: HeartAI (0.33->1.0), AIML (4.0->5.0), model level versions, dependencies (requirements_v4.txt -> requirements_v5.txt)
+*	Code changes: 1.API for inference; 2: internal storage, data structures and configurations
+
+# Other Issues 
+To be clarified by Zhibin Liao: HeartAI RAPIDx API https://postman.heartai.net/#b2b7de94-4673-492b-9291-b58cfbefcf92 does not match with test payload
+Access to HeartAI repository was requested a couple of times, still not provided. There are policy-based terms and conditions the team must follow.
+
+
+```{r table, fig.pos="H"}
+
+```
+
+| a | b | c | d | e |
+|---|---|---|---|---|
+| f | g | h | i | j |
+| k | l | m | n | o |
+| p | q | r | s | t |
+ 
+**Note**: Next regular client meeting will be held on 08/04/2022 at 11:30AM 
+We will demonstrate internal storage structure and inference service API swagger
+
