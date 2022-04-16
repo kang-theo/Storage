@@ -6,9 +6,9 @@
 ~$*
 
 ##-----------------R Markdown----------------
-RMarkdown/*/_site
+RMarkdown/*/*/_site
 RMarkdown/.Rhistory
-# RMarkdown/*/.Rproj.user
+RMarkdown/*/*/.Rproj.user
 
 
 ##-------------------Other-------------------
