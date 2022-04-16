@@ -17,6 +17,7 @@ node_modules
 .history
 
 ##--------------------TeX--------------------
+Tex/*/*/Tmp
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
