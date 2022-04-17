@@ -1,11 +1,12 @@
 ---
-title: "kTest_doc_custom_reference"
+# title: "kTest_doc_custom_reference"
 output: 
   word_document:
     reference_docx: custom-reference_generated-by-Pandoc (Modified).docx
 ---
 The 5th MCI group project client meeting will be held online (MS Team) on 28/03/2022 at 11:30AM
 
+###### Agenda
 
 **Chair**:  Andrew Butenko 
 
@@ -42,16 +43,6 @@ Before the meeting, some thoughts and pitch presentation slides were shared on t
 To be clarified by Zhibin Liao: HeartAI RAPIDx API https://postman.heartai.net/#b2b7de94-4673-492b-9291-b58cfbefcf92 does not match with test payload
 Access to HeartAI repository was requested a couple of times, still not provided. There are policy-based terms and conditions the team must follow.
 
-
-```{r table, fig.pos="H"}
-
-```
-
-| a | b | c | d | e |
-|---|---|---|---|---|
-| f | g | h | i | j |
-| k | l | m | n | o |
-| p | q | r | s | t |
  
 **Note**: Next regular client meeting will be held on 08/04/2022 at 11:30AM 
 We will demonstrate internal storage structure and inference service API swagger

@@ -1,0 +1,35 @@
+---
+title: "TableTest"
+author: "Theo"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+Table from dataset:
+```{r}
+# name<-c("Norman", "Gilda", "Wilma", "Wompa")
+# animal<-c("hamster", "flamingo", "duck", "wompa")
+# food<-c("crumbs", "pink lemonade", "bread", "tears of his enemies")
+# animals<-data.frame((name, animal, food))
+# animals
+```
+
+Table from Excel:
+```{r}
+library(readxl)
+Table_Test <- read_excel("Table_Test.xlsx")
+# View(Table_Test)
+knitr::kable(Table_Test, caption = "An example table caption.")
+```
+
+Markdown table:
+
+| a | b | c | d | e |
+|---|---|---|---|---|
+| f | g | h | i | j |
+| k | l | m | n | o |
+| p | q | r | s | t |
