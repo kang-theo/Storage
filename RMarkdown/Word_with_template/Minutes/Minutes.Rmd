@@ -1,0 +1,134 @@
+---
+title: "Minutes of the Week 1 Meeting"
+author: "Team 10"
+date: "03/03/2022"
+output: 
+  word_document:
+    reference_docx: custom-reference_generated-by-Pandoc (Modified).docx
+---
+
+**Chair**&emsp;&emsp;&emsp;&emsp; Student 1 
+
+**Secretary**&emsp;&emsp; Student 1
+
+**Members**&emsp;&emsp; Student 1(Andriy Butenko), Student 2(Yu Zhang), Student3(Changyu Kang), Client (Yu Zhang)
+
+**Apologies**&emsp;&ensp;&nbsp; None.
+
+# Time and Place
+The 1st meeting for the Project was held online at 6pm.
+
+# Quorum Announcement
+The Chairman announced that a quorum of the group was present, and that the meeting, having been duly convened, was ready to proceed with its business. MS Team was used as real-time communication platform supplemented by group board discussion on MyUni.
+
+# Summary of Previous Meeting
+Briefly recapped project artefacts defined in the project outline and discussed in MS Team chat. Initial focus was availability and capabilities of each student. Two students have finished SE&P course; all students have technical debts to be eliminated, and technical skills to be improved.
+
+# Group Milestone
+## Overview
+Pitch presentation was identified as next group milestone. Draft presentation version was created from template, shared within the team. All students reviewed the draft and agreed to update the document online before submitting. The presentation will contain 3 sections represented by each student. The following epic tasks were identified from project outline:
+
+1. Predicts myocardial function based on structured data
+2. Batch processing of records
+3. Function unification
+4. Complete testing functions and documentation
+
+It seems like the client has finished step 1 and our goal is to wrap that functionality into API with predefined technological stack (Python, ML, web services, etc.). Two types of prediction models are defined in scope:
+
+* deep neural network
+* XGBoost
+
+Main objectives of the project - help the students to get some experience in
+software design, optimization and web service.
+
+## Detailed Presentation
+Student1 went through the presentation slides, explaining the individual stages of progress that the group has completed.
+The first week was mostly lost to the late scheduling of the lecture, so by the end of the first week, only a brief meeting between group members had occurred.
+
+* The first client meeting to be held next week focused on requirements gathering.
+* Azure DevOps was discussed and supplementary option for project management, which can significantly help with tasks and bugs tracking and client communication. For that reason, basic type sandbox project was setup and evaluated.
+* It was discussed that the first milestone was to be held in week three (presentation) and four (business plan), so individual group members started contributing. Client meeting is urgently required to define the scope and collect feedback.
+* Throughout the course of the entire project so far, all team members agreed to improve their skills in associated technologies Git, Python, ML, web services, reports editing (LATEX, Overleaf) participating in all scheduled meetings. Each team member has also been working on their assigned sections of presentation preparing agendas, minutes, and individual timesheets.
+
+# Individual Milestone Reports
+## Student1
+
+* Participated in the first students meeting, helping with communication setup.
+* Produced some ideas and shared thoughts.
+* Compile initial set of required documents from templates. Setup DevOps environment.
+* Setup web API working prototype. Proposed to use REST and GraphQL versions of API.
+* Chaired group meetings.
+
+## Student2
+
+* Participated in the first students meeting, helping with requirements gathering.
+* Familiarized self with GIT. Began reading the GIT manual. Has taken the minutes on a few occasions.
+* Assumed the role of Quality Assurance Manager.
+* Put in charge of Business plan functional requirements.
+
+## Student3
+
+* Participated in the first students meeting, helping with requirements clarification.
+* Figured out project related materials and contacted the client. 
+* Familiarize with ML stack and Docker stack.
+* Tested the containerization of Docker with web service. 
+* Sorted out the process of Agile development.
+
+# Project Administration
+Coming up with the communication plan in the team, including teammates discussion, client meeting, stand-up meeting, documents editing, task management and tracking, etc.
+
+# Requirements Elicitation
+Asked the lecturer for clarification about the Git setup and specifically the difference between a user requirement and a system feature.
+
+## User Requirements
+A user requirement is how the user wants to interact with the system. The requirements are left in a way that is like the original request from the client. User requirements are used to create system features, but in the user requirements section of the SRS there is no need to modify them from their original state.
+
+## System Requirements
+System features come from client user stories transformed into technical and development requirements later used in design. If the requirement seems too ambitious or too ambiguous then they may be discarded in a process called scoping.
+
+* Possibly use use-cases.
+* Describe system, scenario, use case, response sequence.
+* Assigned a priority, e.g., 1-5 or low-high.
+* Assist in planning the project, where high priorities are completed for the first increment, and low priorities may not be completed at all. This is useful to avoid un-necessary effort put into un-needed features or requirements.
+
+## Levels of compatibility
+There are no user interface requirements defined yet. If yes, only modern browsers will be supported.
+
+## Communication
+Limited, but functional. MS Teams combined with Office 365 shared online documents are considered the most efficient channels of communication and collaboration.
+
+## Tasks
+* Project manager signs off on a larger overall multi-person task. 
+* Developers sign off on their individual smaller tasks.
+* Can assume minimal conflicts between developers as offline discussion resolves disputes.
+
+## Lists of Tasks to do
+* Calendar of tasks done.
+* Expected completions are only estimates. 
+* Arrange the task in Azure DevOps.
+
+## Glossary
+None.
+
+## Non-functional
+* Authorization
+* Quality
+* Usability
+* Failure rate and quick recovery
+
+## Interface
+* Visual is more of a design issue, GUI comes from high level discussion from early meetings.
+* Interfacerequirementsaremoreaboutgeneralfunctionality.
+* Simple graphics can be used but will be subject to change.
+* Interfacerequirementsgatheringcomesfromprototyping.
+
+# Adjournment
+The meeting 1 was closed at 19:00.
+
+The next meeting is a group meeting and will be held before Workshop(10117), 
+Marjoribanks/126/SANTOS Lecture Theatre, 
+approximate time 12:00pm - 3:00pm.
+
+The next client meeting scheduled 18/03/2022 at 11:30AM - 12:30PM on weekly basis combined with MS Teams chats and direct emails.
+
+
