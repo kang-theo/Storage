@@ -1,0 +1,136 @@
+---
+title: "Minutes of the Week 2 Meeting"
+author: "Team 10"
+date: "07/03/2022"
+output: 
+  word_document:
+    reference_docx: custom-reference_generated-by-Pandoc (Modified).docx
+---
+
+**Chair**&emsp;&emsp;&emsp;&ensp;Student 1 
+
+**Secretary**&emsp;&emsp;Student 3
+
+**Members**&emsp;&emsp;Student 1(Andriy Butenko), Student 2(Yu Zhang),
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Student3(Changyu Kang), Client (Zhibin Liao)
+
+**Apologies**&emsp;&ensp;&nbsp;None.
+
+# Time and Place
+The $1^{st}$ client meeting was held on Monday 07/03/2022 online at 12pm.
+
+# Quorum Announcement
+The Chairman announced that a quorum of the group was present, and that the meeting, having been duly convened, was ready to proceed with its business. MS Team was used as real-time communication platform supplemented by group board discussion on MyUni.
+
+# Summary of Previous Meeting
+Briefly recapped project artefacts defined in the project outline and discussed in MS Team chat. Initial focus was availability and capabilities of each student. Two students have finished SE&P course; all students have technical debts to be eliminated, and technical skills to be improved.
+
+# Group Milestone
+## Overview
+Software Requirements Specification (SRS) followed by pitch presentation were identified as the next group milestone artifacts. Draft SRS was created from a template, shared within the team. All students reviewed the draft and agreed to update the document online before submitting it. students and client introduced their self.
+
+## Detailed Presentation
+HeartAI is a data and analytics platform consisting of many services and analytics. We (AIML, the client) have been working with HeartAI to create a bunch of myocardial infarction risk predicting machine learning (ML) models under the name of RAPIDx.
+
+**Processes and scope definition**:
+* Software Requirements Specification (SRS): user/system, functional/non- functional
+* Business plan: pitch presentation, business case, group activities
+* Software Project Management Plan (SPMP): scope, agenda and minutes, timesheets, coding
+* Software Testing plan, quality assurance
+
+# Individual Milestone Reports
+## Student1
+* Created SRS from template, transformed user stories into use cases, and requirements; added 3 diagrams to appendix; shared across team
+* Added and populated new pitch presentation slides, generated draft video, demonstrated presentation in rehearsal
+* Setup Docker and development environments 
+* Communicated with client, chaired group meetings.
+
+## Student2
+* Asked questions.
+* Put in charge of Business plan functional requirements.
+
+## Student3
+* Do research on the Docker, Azure DevOps, and ML.
+* Updated SRS with use cases, references, etc.
+* Collect and read project related materials and set up Docker environment.
+* Familiarize with ML stack and ensuring that acquired knowledge is sufficient in development.
+* Secretary throughout the third week.
+
+# Project Administration
+Work tracking and communication can be done in GitHub, but has some limitations applied by Uni. As alternative, we can use Azure DevOps with simple project structures.
+
+* Project management model: Lightweight Agile or Basic link 
+* Meetings (MS Teams/live) with continuous feedback
+* Project [DevOps site](https://dev.azure.com/a1712462/Containerization%20of%20ML%20models) with synchronized GitHub repository Boards 
+* Delivery plans and milestones
+* Risk assessment, options, and negotiations
+
+# Requirements Elicitation
+Client was asked to provide vision, stories, and expectations to build SRS. Based on that document Software Requirements Specification (SRS) draft version was initiated.
+
+**Architectural Design**:
+
+* Model lifecycle management
+* Architecture and design patterns,
+* Interfaces: SOA, serverless, REST/GraphQL, file 
+* Resources: computation, storage, database 
+* UI/UX/API
+* Pipelines: Docker, unit tests, CI/CD 
+* Environments
+
+## User Requirements
+In general, the client hopes to separate the ML model development and web service development. Two major stages in model lifecycle were identified - initialisation and inference.
+
+The functions provided by the web service do not need to know the exact implementation details of the ML model and vice versa. The ML model development work will still be managed by the client. The web service and the docker encapsulation work will be managed and improved by the team from the current state.
+
+When the client is ready to publish a new model. It would be ideal for the client to embed the model in the web service easily by sub-classing a standard class. The standard class should have the functions of 1) initialisation (for storing the model); 2) inference (predicting on a new input JSON).
+
+When the client updates an existing ML model, the web service can easily track the versioning.
+
+When a user sends several patient records instead of one, the web service can take the prediction models’ batch processing ability instead of iterating through each individual record.
+
+The client wants to be able to have several unit tests automatically running after building the container.
+
+## System Requirements
+AI analytics, to be included as a web service via the HeartAI platform. The models are designed to be encapsulated in a docker container which can be deployed easily by the HeartAI system manager in their cloud. What should be noted about the ML models? The ML models are different:
+
+* They may use different libraries (engines), i.e., for deep neural networks we use PyTorch, for XGBoost, it is xgboost.
+* Each ML model may require different input variables, i.e., the CABG model does not use the variable angiogram, but the myocardial infarction prediction model does.
+* Although they are different, when we use these models to inference on a new piece of patient record, they have a function called predict (...) which reads the input and spits the prediction(s).
+
+## Communication
+30 minutes meeting with client per week combined with 3 daily stand-ups with teammates and continuous chats in MS Teams.
+
+## Tasks
+* Pitch presentation preparations and rehearsal
+* Python API (Flask)
+* Docker containerization
+* Developers sign off on their individual smaller tasks.
+* Can assume minimal conflicts between developers as offline discussion resolves disputes.
+
+## Lists of Tasks to do
+* Collecting user stories and transfer them to requirements. 
+* Building the SRS document.
+* Set up the development environment.
+
+## Glossary
+* Scope and boundary analysis of the system 
+* More detailed scope for business plan.
+
+## Non-functional
+* Authorization, roles, and security architecture 
+* Quality
+* Usability
+
+## Interface
+Some UI/UX may be required to upload models. API interaction using standard HTTP protocols being prototyped.
+
+# Adjournment
+The client meeting 1 was closed at 12:30 PM.
+
+Client promised to provide team members access to code base repository of parent project where team must integrate with.
+
+The next client meeting scheduled 18/03/2022 at 11:30AM - 12:30PM on weekly basis combined with MS Teams chats and direct emails.
+
+

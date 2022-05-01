@@ -1,0 +1,50 @@
+---
+# title: "kTest_doc_custom_reference"
+output: 
+  word_document:
+    reference_docx: custom-reference_generated-by-Pandoc (Modified).docx
+---
+The 2nd MCI group Project client meeting will be held online (MS Team) on 18/03/2022 at 11:30PM
+
+###### Agenda
+
+**Chair**:  Changyu Kang
+
+**Members**: Andrew Butenko, Changyu Kang, Yu Zhang, Zhibin Liao
+
+**Secretary**: Andrew Butenko
+
+# Apologies 
+None. 
+
+# Presentation
+Before the meeting, some thoughts and pitch presentation slides were shared on the MS Teams channel.
+
+## Functional requirements and Presentations in Last Meeting  
+1. From last client meeting, we have collected user stories and expectations and transformed them into requirements in Software Requirements and Specifications (SRS). Non-functional requirements (security) to be ignored.
+2. Discuss pitch presentation and get feedback.
+3. Discuss business plan and prerequisites.
+4. Discuss interfaces allowing client to submit and use models and show the
+project API structure.
+5. Draft presentation rehearsal in MS Teams.
+
+## Problems and solutions 
+1. We were focusing on Business Plan building. Some requirements have been built from the use cases, some details still need to study from the provided AIML code, like the input variables and predication types.
+2. A solution environment has been established, but there are still some points to clarify, such as using REST or Graphql. Our team’s will demonstrate pros and cons for both approaches. The client will choose
+3. Pitch presentation draft was shared with client, expecting feedback before submission.
+
+# Requirements Elicitation 
+* Is SRS overlaps with Business Case & Draft Plan?
+* For the test, what’s the difference between user document and manual?
+* Docker file should be based on Ubuntu (as shown in the client codebase) or
+other lightweight images?
+* How to manage model parameters and tabular data?
+
+# Other Issues 
+Continuous feedback for the next Pitch Presentation. This will be done in the end of week 4.
+
+<br>
+<br>
+ 
+**Note**: Additional meeting with HeartAI CEO will be organized by client 22/03/2022. Next regular client meeting will be held on 25/03/2022 at 11:30AM.
+

@@ -1,0 +1,51 @@
+---
+# title: "kTest_doc_custom_reference"
+output: 
+  word_document:
+    reference_docx: custom-reference_generated-by-Pandoc (Modified).docx
+---
+The 3rd MCI group Project client meeting will be held online (MS Team) on 22/03/2022 at 09:30AM
+
+###### Agenda
+
+**Chair**:  Andrew Butenko 
+
+**Members**: Andrew Butenko, Changyu Kang, Yu Zhang, Zhibin Liao, HearAI CEO
+
+**Secretary**: Changyu Kang
+
+# Apologies 
+None. 
+
+# Presentation
+Before the meeting, some thoughts and pitch presentation slides were shared on the MS Teams channel.
+
+## Functional requirements and Presentations in Last Meeting  
+1. Discuss pitch presentation and get feedback.
+2. Setup Business Case and Draft Plan group report in LaTeX. Convert SRS
+into plan. Move project management slides to the plan
+3. Discuss interfaces allowing client to submit and use models and show the
+project API structure.
+4. Draft presentation, video rehearsals in MS Teams.
+
+## Problems and solutions 
+1. We were focusing on Business Plan building. Some requirements have been built from the use cases, some details still need to study from the provided AIML code, like the input variables and predication types.
+2. A solution environment has been established, but there are still some points to clarify, such as using REST or Graphql. Our team’s will demonstrate pros and cons for both approaches. The client will choose.
+3. Pitch presentation draft was shared with client, expecting feedback before submission.
+
+# Requirements Elicitation 
+* Merge SRS, communication plan with Business Case & Draft Plan
+* For the test, unit test framework
+* Docker file still not working. Should be based on Ubuntu (as shown in the
+client codebase) or other lightweight images?
+* Internal storage. How to manage model parameters and tabular data?
+
+# Other Issues 
+Continuous feedback for the next Pitch Presentation. This will be done in the end of week 4.
+
+<br>
+<br>
+ 
+**Note**: Next regular client meeting will be held on 08/04/2022 at 11:30AM 
+We will demonstrate internal storage structure and inference service API swagger
+

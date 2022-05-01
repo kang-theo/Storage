@@ -1,0 +1,49 @@
+---
+# title: "kTest_doc_custom_reference"
+output: 
+  word_document:
+    reference_docx: custom-reference_generated-by-Pandoc (Modified).docx
+---
+The 5th MCI group project client meeting will be held online (MS Team) on 08/04/2022 at 11:00AM
+
+###### Agenda
+
+**Chair**:  Andrew Butenko 
+
+**Members**: Andrew Butenko, Changyu Kang, Yu Zhang, Zhibin Liao
+
+**Secretary**: Changyu Kang
+
+
+# Apologies 
+None. 
+
+# Presentation
+Before the meeting, some thoughts and pitch presentation slides were shared on the MS Teams channel.
+
+## Functional requirements and Presentations in Last Meeting  
+1. Demonstrate the API generated Flask server code using Swagger and get feedback.
+2. Policy terms and conditions have been accepted and we need access to HeartAI git repository associated with related service.
+3. Team 10 personnel changes.
+4. How to align all these versions' strategies, details to be seen in Business
+Case & Draft Plan Section 1.5: Versioning.
+
+## Problems and solutions 
+1. We were focusing on Business case & draft plan in the last week. Project goals, activities, schedule, roles and responsibilities, communication plan and risk management are defined. There is still some unclarity about versioning.
+2. Team personnel change may affect the execution of the project plan. This will be reassessed by course coordinator.
+
+# Requirements Elicitation 
+* Assignment: Update the milestone 1 report.
+* Personnel changes: Reducing Scope and focus on core functionalities.
+* Versioning: HeartAI (0.33->1.0), AIML (4.0->5.0), model level versions,
+dependencies (requirements\_v4.txt -> requirements\_v5.txt).
+* Code changes: 1.API for inference; 2: internal storage, data structures and
+configurations.
+
+# Other Issues 
+Access to HeartAI repository still need to authorize. Policy-based terms and conditions has been accepted.
+
+<br>
+<br>
+ 
+**Note**: Next regular client meeting will be held on 29/04/2022 at 11:00AM.

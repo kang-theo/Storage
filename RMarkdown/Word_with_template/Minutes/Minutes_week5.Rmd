@@ -1,0 +1,128 @@
+---
+title: "Minutes of the Week 5 Meeting"
+author: "Team 10"
+date: "28/03/2022"
+output: 
+  word_document:
+    reference_docx: custom-reference_generated-by-Pandoc (Modified).docx
+---
+
+**Chair**&emsp;&emsp;&emsp;&ensp;Student 1 
+
+**Secretary**&emsp;&emsp;Student 3
+
+**Members**&emsp;&emsp;Student 1(Andriy Butenko), Student 2(Yu Zhang), 
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Student3(Changyu Kang), Client (Zhibin Liao)
+
+**Apologies**&emsp;&ensp;&nbsp;None.
+
+# Time and Place
+The $4^{th}$ client meeting was held on Tuesday 28/03/2022 online at 11:30AM.
+
+# Quorum Announcement
+The Chairman announced that a quorum of the group was present, and that the meeting, having been duly convened, was ready to proceed with its business.
+
+# Summary of Previous Meeting
+Described the documents in the checklist of this course. Discussed version tracking, requirement dependencies, API for model provisioning and the test framework. The client gave some suggestions on code structure and API difference between AIML and HeartAI.
+
+Main points discussed are list below:
+
+1. Model version tracking. Discussed ways to assign model numbers (low priority).
+2. Decided API for inference as a first deliverable, corresponding to step 7,8,9 in the sequence diagram.
+3. Discussed milestone 1 report next week.
+4. Try to separate version 4 into two parts:
+    a. Research part (our team do not mind).
+    b. Service part, to use existing code and try those tests.
+5. Talked something about model provisioning, such as:
+    a. Suggested to provide parameters as JSON.
+    b. Discussed models as JSON or keep using binary files.
+6. Receiving from HeartAI CEO about the API preference: REST, to be discussed later.
+7. To reshape the code provided to decouple the specific data from the test framework, as well as other parts like protocol processing. Besides, avoid hardcode like port number. To provide them as part of payload.
+8. Discuss the API difference of AIML and HeartAI, the later one is a translation of the former to expose to the end users.
+
+# Group Milestone
+## Overview
+Business case & draft plan followed by milestone 1 report were identified as the next group targets. Develop and demonstrate the same functionality of AIML service using simplified API interfaces. Ambiguous points were discussed and clarified. Get the feedback for the Business case & plan.
+
+## Detailed Presentation
+A draft version of the business case & plan was shared within the team to update and provide it to client this week to review. Code details like how to integrate AIML function into our API were discussed, some problems need to be clarified later. The next step for development is decided.
+
+# Individual Milestone Reports
+## Student1
+* Build general structure of business case and draft plan report. Build estimation and schedule Gantt diagram sections.
+* Recorded presentation video parts 1 and 4. Compiled group video and published to YouTube.
+* Implement internal storage, configurations, data structures, and swagger API prototypes. Demonstrate to the team.
+* Observed group C presentations. Compiled and discussed with our team questions for other teams. Answered to our team questions.
+
+## Student2
+* Participated in team and client meetings.
+* Recorded presentation video parts 3.
+* Builtandupdateddedicatedpresentationslides. 
+* Start building part 1 (business case) report.
+
+## Student3
+* Review and update business case & plan, Minutes, Agenda documents. 
+* Recorded presentation video parts 2.
+* Participated in team and client meetings and communications, rehearsed the pitch presentation slides.
+* Secretory of the client meetings. 
+* Studydockerrelatedknowledge.
+* Start building part 2 (Draft plan) report.
+
+# Project Administration
+Keep using DevOps for project management and stays preferable for the team lightweight agile. Assign tasks to team members to be responsible for.
+
+# Requirements Elicitation
+Business plan report is confirmed again by course coordinator as group assignment, not individual.
+
+## User Requirements
+User stories are constantly being revisited and discussed with client to rectify more accurate use cases, and requirements.
+
+## System Requirements
+The client confirmed to omit security requirements (https, ssl, tls) as provided by HearAI.
+
+RAPIDx AI analytics, to be included as a web service via the HeartAI platform. The models are designed to be encapsulated in a docker container which can be deployed easily by the HeartAI system manager in their cloud. What should be noted about the Machine Learning (ML) models? The ML models are different:
+
+* They may use different libraries (engines), i.e., for deep neural networks we use PyTorch, for XGBoost, it is xgboost.
+* Each ML model may require different input variables, i.e., the CABG model does not use the variable angiogram, but the myocardial infarction prediction model does.
+* Although they are different, when we use these models to inference on a new piece of patient record, they have a function called predict (...) which reads the input and spits the prediction(s).
+
+## Communication
+50 minutes meeting with client per week combined with 3 daily stand-ups with teammates and continuous chats in MS Teams.
+
+## Tasks
+* Submit pitch presentation video.
+* Provide business case & plan link for client review on Thursday-Friday and
+*xpect to get feedback.
+* Receiving from HeartAI CEO about the API preference: REST, to be discussed later.
+* Try to demonstrate use the same functionality defined in AIML service cod e.
+* Dockercontainerization.
+
+## Lists of Tasks to do
+* Update the business case & plan, milestone 1 report document.
+* Python API development. Swagger interfaces.
+* First functionality of inference development.
+* Submit business plan and draft plan next week.
+* StartpopulatingMilestone1draftreport.
+
+## Glossary
+* Scope and boundary analysis of the system.
+* Moredetailsforbusinesscaseandplan.
+
+## Non-functional
+* Quality management, unit tests.
+* Testability, Traceability, Versioning.
+
+## Client Feedback
+* [Yesterday 12:42 pm] Zhibin Liao, from Lukah: For simplicity, I recommend REST with defined hypermedia. The hypermedia will keep the API usage constrained and provide a defined specification for interaction. GraphQL is okay but may not be necessary for the more domain-specific functionality that we have with the analytics server (i.e. we are not necessarily managing assets or resources where GraphQL can be powerful). If the students could provide a brief pros vs con for each, I would be happy to consider and provide further thoughts.
+* The ball is yours depending on whether you want to do the pros vs cons for him or just accept REST.
+* Access to GitHub. Please allow me max 2 more days to document some specific policy governing access to the repository. The students will need to read and confirm agreement with the policy. This will govern the expected management of potentially sensitive information and some other considerations.
+
+# Adjournment
+The client meeting 4 was closed at 12:30 PM. 
+
+The next client meetings scheduled as below:
+
+  • 08/04/2022 at 11:30AM - 12:00PM (MS Teams with AIML client).
+
+Weekly basis communication combined with MS Teams chats and direct emails.

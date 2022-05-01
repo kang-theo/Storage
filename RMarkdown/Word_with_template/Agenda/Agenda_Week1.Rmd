@@ -1,0 +1,54 @@
+---
+output:
+  word_document:
+    reference_docx: custom-reference_generated-by-Pandoc (Modified).docx
+  pdf_document: default
+---
+The 1st MCI group Project meeting will be held online (MS Team) on 03/03/2022 at 5:30PM
+
+###### Agenda
+
+**Chair**:  Andrew Butenko 
+
+**Members**: Andrew Butenko, Changyu Kang, Yu Zhang
+
+**Secretary**: Changyu Kang
+
+# Apologies 
+None. 
+
+# Presentation
+Before starting the meeting, some thoughts and key ideas were collected and shared on the group discussion board at the [following topic]().
+
+## Functional requirements and Presentations in Last Meeting  
+Discussion on team availability, and first milestones. Introducing yourself, sharing thoughts and ideas. Organizing regular stand-ups with the following structure:
+
+* What has been Done?
+* What is in Progress?
+* What still must be Done?
+* Any Blockages/Expectations etc
+
+## Problems and solutions 
+Initially, we had a problem with the technology stack. After applied research on the internet, we got a better understanding of how-to distinct parts of the technological stacks and domain areas. Associated wiki pages were setup to collect and document domain-specific information.
+
+Focus on team members working environments setup. Process of choosing appropriate tools was initiated.
+
+# Requirements Elicitation 
+Functional requirements shall be discussed with Client.
+
+1. Collect user stories, transform into requirements
+2. Discuss nearest milestones (pitch presentation and business plan) and prerequisites
+3. Interfaces allowing client to submit and use models:
+    * Web service, database, storage for models.
+    * API interfaces.
+    * UI interfaces.
+    * Admin interfaces, authentication, and authorization.
+
+# Other Issues 
+Questions for the next milestone. Client (Zhibin Liao) communication has not established yet. The first client meeting will be held in next week.
+
+<br>
+<br>
+ 
+**Note**: Next client meeting will be held on 08/03/2022 at 12PM
+

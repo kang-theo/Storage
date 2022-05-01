@@ -1,0 +1,117 @@
+---
+title: "Minutes of the Week 6 Meeting"
+author: "Team 10"
+date: "08/04/2022"
+output: 
+  word_document:
+    reference_docx: custom-reference_generated-by-Pandoc (Modified).docx
+---
+
+**Chair**&emsp;&emsp;&emsp;&ensp;Student 1 
+
+**Secretary**&emsp;&emsp;Student 2
+
+**Members**&emsp;&emsp;Student 1(Andriy Butenko), Student2(Changyu Kang), 
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Client (Zhibin Liao)
+
+**Apologies**&emsp;&ensp;&nbsp;None.
+
+# Time and Place
+The $5^{th}$ client meeting was held on 08/04/2022 online at 11:00AM.
+
+# Quorum Announcement
+The Chairman announced that a quorum of the group was present, and that the meeting, having been duly convened, was ready to proceed with its business.
+
+# Summary of Previous Meeting
+Discussed API interfaces and structure of endpoints. New internal storage and configuration were proposed. HeartAI repository access was discussed but no actions required at this stage. 
+
+More details are listed below:
+
+1. Personnel change: Talked about the personnel change of our team and the decrease of the scope. The focus will be mainly on the core function.
+2. API Management (APIM): Used to map our internal API to client’s external API exposed to end users. The client’s API (URL accessed) uses many endpoints, we improve it by changing some into parameters. How to map our internal API to external one is the client’s responsibility. The client proposed that if there are some backward compatibility tests.
+3. The popular open API in REST world: Introduced the way of generating API server code from Swagger file.
+4. Tox for unit testing: Introduced Tox to conducting unit test. It is good for test result generation and solution validation. It does the similar thing like the test folder of client’s (AIML) repository.
+5. Docker base image selection: “Ubuntu” vs. “Python3-alpine”.
+    a. Again, discussed the lightweight alpine compared with full stuff Ubuntu. We demonstrated the identical behaviour for the two images.
+    b. Discussed the CUDA platform support for GPU computation. The client’s selection for Ubuntu is out of the consideration for GPU support in end users’ network. However, they do not have a GPU in their environment right now.
+    c. The lightweight version is easier for provisioning. Otherwise, it will need to spend extra time and resources for GPU feature for some reason unavailable yet.
+6. Travis-CI: To be discussed in next client meeting. It is a way of CI, which can integrate with GitHub repositories to test and deploy the project with confidence.
+7. Virtual environment: Not needed in docker integration, set “virtualenvs create false”.
+8. We reaffirm the pros of configuration. i.e., to remove the specific hard code which should not belong to and move them into a JSON config file. 
+9. Introduced the security of models: Accessing models and updating models. A DELETE POST is provided but not implemented yet.
+10. Discussed something about running the client’s test.
+
+# Group Milestone
+## Overview
+Business case & draft plan submitted this week was discussed with client. Core activities were presented and accepted by the client. The API interface has been demonstrated to the client with some improvement suggestion. In the stage ahead, inference API is to be implemented.
+
+## Detailed Presentation
+A final Business case and draft plan is revised and submitted this week. Project schedule is decided, and the API implementation will be conducted. Docker base image preference will be the python3-alpine. APIM concept is proposed to cope with the difference between our internal API with the client’s external API.
+
+# Individual Milestone Reports
+## Student1
+
+* Conductedandparticipatedinallmeetings.
+* Reviewed all sections of business case & plan, polished and improved content and submitted report.
+* Tested internal storage, configurations, data structures, and swagger API prototypes. Build Flask server API and demonstrated to the client draft end to end solution.
+* Observed group C presentations, asked other teams questions. Answered other teams’ questions.
+
+## Student2
+* Secretory of the client meetings and participated all the meeting this week.
+* Revisedbusinesscase&draftplan,Agenda,Minutes.
+* Organizedmeetingwiththecoursecoordinator.
+* EvaluateddockerimagestosupportGPUcalculations.
+* Observed group C presentations, asked and answered other teams’ questions.
+
+# Project Administration
+Team restructure was discussed with the course coordinator. Personnel changed. It was decided to reduce the scope and focus on the core function based on the changes.
+
+# Requirements Elicitation
+Only core requirements, associated with inference API, are in the scope since now.
+
+## User Requirements
+The client has accepted most initiatives proposed by the team. Some mismatches between AIML and HeartAI APIs were negotiated.
+
+## System Requirements
+To match with [OpenAPI specification]() standards server code was generated by the [swagger-codegen]() project. Server stub example of building a swagger- enabled Flask server was produced.
+
+## Communication
+1 hour meeting with client per week combined with 3 daily stand-ups with teammates and continuous chats in MS Teams.
+
+## Tasks
+* Demonstrate Flask Server code, tests and running components.
+* Docker containerization. Choose between python:3-alpine and ubuntu:18.04 images. Pros and Cons. Our preference is python:3-alpine as most lightweight and compact image.
+
+## Lists of Tasks to do
+* Configure generated code based on swagger file.
+* Startusinginternalstorageanddatastructures.
+* Proceed populating Milestone1 draft report.
+* AccesstoHeartAIGitHubrepoisnotresolvedyet.
+* Unittestsusedinclient’sprojectbasedonbashfilesarenotworkingon Windows.
+
+## Glossary
+Libraires and frameworks in scope: 
+
+* Pip
+* Setup
+* Poetry
+* Flask
+* Tox
+* Travis
+
+## Non-functional
+* Quality checks using robust unit testing frameworks (Tox, unit tests) where conducted and approved for further development and improvements.
+* Testability, Traceability are considered as main quality attributes to be measured.
+* Compatibility with HeartAI RAPIDx API is supported but may require some changes in terms of API management.
+
+## Client Feedback
+* Docker image based on python:3-alpine will be evaluated by client to make sure it is sufficient for GPU intensive operations, ubuntu:18.04 image configuration still in place.
+* Keyunitteststobeadoptedandimproved.
+
+# Adjournment
+The client meeting 5 was closed at 12:30 PM. 
+
+The next client meetings scheduled as below:
+
+• 29/04/2022 at 11:00AM - 12:00PM (MS Teams with AIML client).

@@ -7,16 +7,18 @@ output:
     reference_docx: custom-reference_generated-by-Pandoc (Modified).docx
 ---
 
-**Chair**&emsp;&emsp;&emsp;&emsp; Student 1 
+**Chair**&emsp;&emsp;&emsp;&ensp;Student 1 
 
-**Secretary**&emsp;&emsp; Student 1
+**Secretary**&emsp;&emsp;Student 1
 
-**Members**&emsp;&emsp; Student 1(Andriy Butenko), Student 2(Yu Zhang), Student3(Changyu Kang), Client (Yu Zhang)
+**Members**&emsp;&emsp;Student 1(Andriy Butenko), Student 2(Yu Zhang), 
 
-**Apologies**&emsp;&ensp;&nbsp; None.
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Student3(Changyu Kang)
+
+**Apologies**&emsp;&ensp;&nbsp;None.
 
 # Time and Place
-The 1st meeting for the Project was held online at 6pm.
+The $1^{st}$ meeting for the Project was held online at 6pm.
 
 # Quorum Announcement
 The Chairman announced that a quorum of the group was present, and that the meeting, having been duly convened, was ready to proceed with its business. MS Team was used as real-time communication platform supplemented by group board discussion on MyUni.

@@ -1,0 +1,67 @@
+---
+# title: "kTest_doc_custom_reference"
+output: 
+  word_document:
+    reference_docx: custom-reference_generated-by-Pandoc (Modified).docx
+---
+The 1st MCI group Project client meeting will be held online (MS Team) on 07/03/2022 at 12:00PM
+
+###### Agenda
+
+**Chair**:  Andrew Butenko 
+
+**Members**: Andrew Butenko, Changyu Kang, Yu Zhang, Zhibin Liao
+
+**Secretary**: Changyu Kang
+
+# Apologies 
+None. 
+
+# Presentation
+Discuss summary provided by client.
+
+## Functional requirements and Presentations in Last Meeting  
+Discussion on team availability, and first milestone. Introducing yourself, sharing thoughts and ideas. Organizing regular stand-ups with the following structure:
+
+* What has been Done?
+* What is in Progress?
+* What still must be Done?
+* Any Blockages/Expectations etc.
+
+### Problems and solutions 
+Focus on SRS spec building. Client demonstration of existing solution environment.
+
+# Requirements Elicitation 
+**Project Process**:
+
+* Software Requirements Specification (SRS): user/system, functional/non- functional• Business plan: pitch presentation, business case, group activities.
+* Software Project Management Plan (SPMP): scope, agenda and minutes,
+timesheets, coding.
+* Software Testing plan, quality assurance.
+
+**Work tracking and communication**:
+
+* Project management model: [Lightweight Agile or Basic](https://docs.microsoft.com/en-us/azure/devops/boards/best-practices-agile-project-management?view=azure-devops&tabs=agile-process).
+* Meetings (MS Teams/live) with continuous feedback.
+* Project DevOps site with synchronized GitHub repository [Boards](https://dev.azure.com/a1712462/Containerization%20of%20ML%20models/_workitems/recentlyupdated/).
+* Delivery plans and milestones.
+* Risk assessment, options, and negotiations.
+
+**Architectural Design**:
+
+* Model lifecycle management.
+* Architecture and design patterns,.
+* Interfaces: SOA, serverless, REST/GraphQL, file.
+* Resources: computation, storage, database.
+* UI/UX/API.
+* Pipelines: Docker, unit tests, CI/CD.
+* Environments.
+
+# Other Issues 
+Questions for the next milestone. Client (Zhibin Liao) communication has being established. This will be done in week 3.
+
+<br>
+<br>
+ 
+**Note**: Next meeting will be held on 18/03/2022 at 11:30AM.
+

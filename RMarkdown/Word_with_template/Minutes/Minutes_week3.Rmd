@@ -1,0 +1,130 @@
+---
+title: "Minutes of the Week 3 Meeting"
+author: "Team 10"
+date: "18/03/2022"
+output: 
+  word_document:
+    reference_docx: custom-reference_generated-by-Pandoc (Modified).docx
+---
+
+**Chair**&emsp;&emsp;&emsp;&ensp;Student 3 
+
+**Secretary**&emsp;&emsp;Student 1
+
+**Members**&emsp;&emsp;Student 1(Andriy Butenko), Student 2(Yu Zhang), 
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Student3(Changyu Kang), Client (Zhibin Liao)
+
+**Apologies**&emsp;&ensp;&nbsp;None.
+
+# Time and Place
+The $2^{nd}$ client meeting was held on Monday 18/03/2022 online at 11:30AM.
+
+# Quorum Announcement
+The Chairman announced that a quorum of the group was present, and that the meeting, having been duly convened, was ready to proceed with its business. MS Teams was used as a real-time communication platform supplemented by Azure DevOps.
+
+# Summary of Previous Meeting
+Briefly recapped project artefacts defined in the project outline. The client has provided the codebase with documentation, versions 1-4 history, service prototype, and unit tests. Team 10 GitHub will stay isolated from AIML one, where direct access was not authorized. We proceed using Mermaid diagrams in our documentation as best way to describe conceptual views.
+
+Some other points discussed are list below:
+
+1. Discussed the preference on Tuesday meeting with HeartAI CEO:
+    a. API style: REST/ GraphQL.
+    b. Cloud services: PasS/SaaS
+2. Discussed Docker base image selection:
+    - Why ubuntu is adopted in client’s project?
+    - Because PyTorch has some dependencies, and the developer is also using ubuntu. Consider using a light-weight python slim image.
+3. Discuss how the model is used by our team project:
+    - What is the communication method of using models? How to keep consistency when the input, output and how to use the model may be different from the previous version. How is the client to adapt to out team service or API to use that?
+    - Out team recommended to use model provision and mechanism with parameters. A collection of parameters needs to be provided by client through JSON which will be used in our provision. Models will also use that parameter collection as a part of usage.
+4. Talked business case plan, collected assignment response from client. 
+5. Talked some best practices and techniques acquired by our team like mermaid, Azure, etc.
+6. Discussed the way of collaborative:
+    - Stand-alone is the preference.
+7. Discussed the storage structure:
+    - How can we structure that storage?
+    - Just a collection of pickle files. We use file storage instead of database. 
+    - Client needs to assign all these attributes when creating it, such as version, type, name, etc.
+
+# Group Milestone
+## Overview
+Software Requirements Specification (SRS) transformed into a business plan followed by pitch presentation were identified as the next group milestone artifacts. Team solution environment has been setup in VS Code IDE and demonstrated to the team. Ambiguous points were discussed and clarified. Got the feedback for the pitch presentation draft.
+
+## Detailed Presentation
+A draft version of the pitch presentation was shared with the client. Docker file content options were discussed. Image may be built on different Linux compatible platforms.
+
+# Individual Milestone Reports
+## Student1
+* Updated SRS, milestone 1 report, and business plan draft documents. 
+* Assisted chairperson student as a secretary.
+* Fulfilled presentation slides, rehearsal with recorded video produced.  Participated in team stand-ups, client meetings and associated chats.
+* Proposed API options, created mock-up applications, recorded video for client and HeartAI CEO meetings. Shared achievements.
+* Builtandupdateddedicatedpresentationslides.
+
+## Student2
+* ReviewedSRSreport.
+* Participated in team and client meetings. 
+* Builtandupdateddedicatedpresentationslides.
+
+## Student3
+* Updated SRS, Minutes, Agenda documents.
+* Built and updated dedicated pitch presentation slides.
+* Participated in team and client meetings and communications, rehearsed the pitch presentation slides.
+* Chairperson of the 2nd client meeting.
+* Reviewed specification documents to figure out the functions of the project.
+
+# Project Administration
+Student GitHub Enterprise allows to manage projects with limited functionality. DevOps provide more options for project management and stays preferable for the team lightweight agile.
+
+
+# Requirements Elicitation
+Overleaf looks more accurate platform for business plan report, rather than MS Word. That report was recently changed by course coordinator as **individual assignment**, not group. That means each student must finish it independently.
+
+## User Requirements
+User stories are constantly being revisited and discussed with client to rectify more accurate use cases, and requirements.
+
+## System Requirements
+The client confirmed to omit security requirements (https, ssl, tls) as provided by HearAI.
+
+RAPIDx AI analytics, to be included as a web service via the HeartAI platform. The models are designed to be encapsulated in a docker container which can be deployed easily by the HeartAI system manager in their cloud. What should be noted about the Machine Learning (ML) models? The ML models are different:
+
+* They may use different libraries (engines), i.e., for deep neural networks we use PyTorch, for XGBoost, it is xgboost.
+* Each ML model may require different input variables, i.e., the CABG model does not use the variable angiogram, but the myocardial infarction prediction model does.
+* Although they are different, when we use these models to inference on a new piece of patient record, they have a function called predict (...) which reads the input and spits the prediction(s).
+
+## Communication
+30 minutes meeting with client per week combined with 3 daily stand-ups with teammates and continuous chats in MS Teams.
+
+## Tasks
+* Decides the way of communication between our team project and the client’s code.
+* Business case plan draft and milestone1 report. 
+* Dockercontainerization.
+
+## Lists of Tasks to do
+* UpdatetheSRSdocument.
+* Python API (Flask) development
+* Pitch presentation preparations and rehearsal 
+* Submit pitch presentation slide draft for feedback 
+* Meeting with HeartAI CEO
+
+## Glossary
+* Scope and boundary analysis of the system 
+* More detailed scope for business plan.
+
+## Non-functional
+* Quality management, unit tests 
+* Usability
+
+## Interface
+* API interaction using standard HTTP protocols being prototyped. 
+* GraphQL demonstrates benefits over REST.
+
+# Adjournment
+The client meeting 2 was closed at 13:00 PM. 
+
+The next client meetings scheduled as below:
+
+* 22/03/2022 at 09:30AM - 10:30PM (Zoom with HeartAI CEO)
+* 28/03/2022 at 11:30AM - 12:30PM (MS Teams with AIML client)
+
+Weekly basis communication combined with MS Teams chats and direct emails.
